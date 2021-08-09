@@ -18,6 +18,10 @@ RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable && \
       libgdal-dev \
       libgeos-dev \
       libproj-dev \
+      coinor-libcbc-dev \
+      coinor-libclp-dev \
+      coinor-libsymphony-dev \
+      coinor-libcgl-dev \
       libharfbuzz-dev \
       libfribidi-dev \
       libfontconfig1-dev \
