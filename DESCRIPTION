@@ -44,7 +44,7 @@ RoxygenNote: 7.1.1
 Language: en-US
 Remotes:
   r-lib/pkgdown,
-  NCC-CNC/actionmisc
+  NCC-CNC/whatdataio
 Collate:
     'app_config.R'
     'app_global.R'
