@@ -44,12 +44,12 @@ server_display_information <- quote({
     feature_data <- values[["feature_data"]]
 
     # verify input data
-    has_site_values <- has_valid_values(site_data[[1]])
-    has_feature_values <- has_valid_values(feature_data[[1]])
-    has_action_values <- has_valid_values(action_data[[1]])
-    unique_site_values <- has_unique_values(site_data[[1]])
-    unique_feature_values <- has_unique_values(feature_data[[1]])
-    unique_action_values <- has_unique_values(action_data[[1]])
+    has_site_values <- whatdataio::has_valid_values(site_data[[1]])
+    has_feature_values <- whatdataio::has_valid_values(feature_data[[1]])
+    has_action_values <- whatdataio::has_valid_values(action_data[[1]])
+    unique_site_values <- whatdataio::has_unique_values(site_data[[1]])
+    unique_feature_values <- whatdataio::has_unique_values(feature_data[[1]])
+    unique_action_values <- whatdataio::has_unique_values(action_data[[1]])
     has_short_action_names <-
       all(nchar(as.character(action_data[[1]])) <= 14, na.rm = TRUE)
 

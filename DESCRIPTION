@@ -25,12 +25,13 @@ Imports:
     shinyjs (>= 2.0.0),
     RcppTOML (>= 0.1.7),
     htmltools (>= 0.5.1.1),
-    actionmisc
+    whatdataio,
 Suggests:
     testthat (>= 2.0.1),
     knitr (>= 1.2.0),
     roxygen2 (>= 6.1.1),
     rmarkdown (>= 1.10),
+    sf (>= 0.9-8),
 Depends:
     R (>= 4.0.0),
     shinyBS (>= 0.6.1),
@@ -57,4 +58,3 @@ Collate:
     'server_initialize_app.R'
     'server_resize_buttons.R'
     'utils_resize_table.R'
-    'utils_verification.R'

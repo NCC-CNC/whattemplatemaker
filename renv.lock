@@ -86,18 +86,6 @@
       "Repository": "CRAN",
       "Hash": "81050aa684032d6db264aa60ed1d59d7"
     },
-    "actionmisc": {
-      "Package": "actionmisc",
-      "Version": "0.0.0.99999",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "NCC-CNC",
-      "RemoteRepo": "actionmisc",
-      "RemoteRef": "master",
-      "RemoteSha": "7626a4014fa6d4ed5fba9b0852d38f0ada879468",
-      "Hash": "62d6004830aca6f0841ff9a87c00cd30"
-    },
     "ape": {
       "Package": "ape",
       "Version": "5.5",
@@ -1228,6 +1216,18 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "20c45f1d511a3f730b7b469f4d11e104"
+    },
+    "whatdataio": {
+      "Package": "whatdataio",
+      "Version": "0.0.0.99999",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "NCC-CNC",
+      "RemoteRepo": "whatdataio",
+      "RemoteRef": "master",
+      "RemoteSha": "b44a0b51727be5600dbfb11636103d2f05b17825",
+      "Hash": "eeeb9ae4d60d0a8404cf8d9ced5fd5b4"
     },
     "whisker": {
       "Package": "whisker",

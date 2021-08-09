@@ -18,7 +18,7 @@ server_download_data <- quote({
       paste("data-template.xlsx", sep = "")
     },
     content = function(path) {
-      out_data <- actionmisc::create_template_workbook(
+      out_data <- whatdataio::create_template_workbook(
         site_names = values[["site_data"]][[1]],
         feature_names = values[["feature_data"]][[1]],
         action_names = values[["action_data"]][[1]],
