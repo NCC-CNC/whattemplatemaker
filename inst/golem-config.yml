@@ -1,8 +1,14 @@
 default:
+  # golem variables
   golem_name: whattemplatemaker
   golem_version: 0.0.0.9000
   app_prod: no
+
+  # number of default rows in the tables
+  n_data_rows: 5
+
 production:
   app_prod: yes
+
 dev:
   golem_wd: !expr here::here()
