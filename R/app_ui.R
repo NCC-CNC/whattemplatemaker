@@ -15,13 +15,14 @@ app_ui <- function(request) {
       ## suppress dependencies that fail to import correctly
       htmltools::suppressDependencies("shinyBS"),
 
-      ## title panel
-      shiny::titlePanel("What Template Maker"),
-
       ## app layout
       shiny::sidebarLayout(
         ## sidebar
         shiny::sidebarPanel(
+          ### title
+          shiny::h3("What Template Maker"),
+          shiny::br(),
+          ### add help messages
           shiny::helpText("Welcome to the What Template Maker app! This app is designed to help you prepare input data for the What To Do app. Since the What To Do  requires a lot of data, in a very specific format, we developed this app to help you prepare input data for your study system. Specifically, this app produces a customized template Excel Spreadsheet for entering in your data. Please enter in the relevant information into the tables on the right, and then click the \"Download\" button (below) to save the template Excel Spreadsheet to your computer. After downloading the file, you can then open it on your computer to enter data (e.g. cost data) into the spreadsheet. Once you've finished, you can use the updated spreadsheet with the What To Do app to generate conservation management plans."),
           shiny::br(),
           shiny::helpText("The \"Download\" button will turn blue once you've finished adding information on your study system to the tables. Please note that you can't have any blank cells in the tables, so delete any extra rows. You can add rows to the tables by entering in the desired number of rows into the text box above each table and clicking the \"Resize table\" button. You can also add and remove rows by right clicking on them and selecting the relevant option (e.g. \"Insert row above\" or \"Remove row\")."),
