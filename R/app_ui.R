@@ -161,7 +161,7 @@ golem_add_external_resources <- function() {
     ## bundle CSS and JS files
     bundle_resources(
       path = app_sys("app/www"),
-      app_title = "What To Do"
+      app_title = "What Template Maker"
     ),
 
     ## favicon
