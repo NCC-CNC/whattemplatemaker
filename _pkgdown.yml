@@ -13,6 +13,6 @@ reference:
     desc: >
       Main functions and documentation for the application.
     contents:
-      - whattodo
+      - whattemplatemaker
       - run_app
       - get_golem_config
