@@ -28,6 +28,8 @@ The application is [available online](https://ncc.carleton.ca). Please
 note that you must use [Google Chrome](https://www.google.com/chrome/)
 for it to work.
 
+<img src="man/figures/screenshot.png" align="center" width="100%" />
+
 ## Installation
 
 The application is available as an online service provided by the
