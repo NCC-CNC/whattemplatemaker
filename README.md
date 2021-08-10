@@ -4,23 +4,29 @@
 # whattemplatemaker: Interactive data template application for the What To Do application
 
 [![lifecycle](https://img.shields.io/badge/Lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![R-CMD-check-Ubuntu](https://img.shields.io/github/workflow/status/NCC-CNC/whattemplatemaker/Ubuntu/master.svg?label=Ubuntu)](https://github.com/NCC-CNC/whattemplatemaker/actions)
+[![R-CMD-check-Windows](https://img.shields.io/github/workflow/status/NCC-CNC/whattemplatemaker/Windows/master.svg?label=Windows)](https://github.com/NCC-CNC/whattemplatemaker/actions)
+[![R-CMD-check-Mac-OSX](https://img.shields.io/github/workflow/status/NCC-CNC/whattemplatemaker/Mac%20OSX/master.svg?label=Mac%20OSX)](https://github.com/NCC-CNC/whattemplatemaker/actions)
 [![Docker
 Status](https://img.shields.io/docker/cloud/build/naturecons/whattemplatemaker?label=Docker%20build)](https://hub.docker.com/r/naturecons/whattemplatemaker)
+[![Coverage
+Status](https://codecov.io/github/NCC-CNC/whattemplatemaker/coverage.svg?branch=master)](https://codecov.io/github/NCC-CNC/whattemplatemaker?branch=master)
 
 The *What Template Maker* is a tool that creates data templates for the
 [*What To Do* application](https://github.com/NCC-CNC/whattodo). Since
 the *What To Do* application requires data in a very specific format,
 this application is designed to help with preparing input data for the
-What To Do application. After providing the names of sites, features,
+*What To Do* application. After providing the names of sites, features,
 and actions, a template Excel Spreadsheet can then be downloaded from
 this application. The template Excel Spreadsheet can then be populated
 with data (e.g. longitude/latitude of sites) and, subsequently, uploaded
-to the What To Do application.
+to the *What To Do* application to generate prioritizations.
 
 ## Usage
 
-The application is [available online](TODO). **Please note that you must
-use [Google Chrome](https://www.google.com/chrome/) for it to work.**.
+The application is [available online](https://ncc.carleton.ca). Please
+note that you must use [Google Chrome](https://www.google.com/chrome/)
+for it to work.
 
 ## Installation
 
