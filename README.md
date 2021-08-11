@@ -28,7 +28,13 @@ The application is [available online](https://ncc.carleton.ca). Please
 note that you must use [Google Chrome](https://www.google.com/chrome/)
 for it to work.
 
-<kbd><img class = "screenshot" src="man/figures/screenshot.png" align="center" width="100%"/><kbd>
+<table>
+<tr>
+<td>
+<img class = "screenshot" src="man/figures/screenshot.png" align="center" width="100%"/>
+</td>
+</tr>
+</table>
 
 ## Installation
 
