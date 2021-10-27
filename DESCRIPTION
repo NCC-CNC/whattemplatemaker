@@ -1,6 +1,6 @@
 Package: whattemplatemaker
 Title: Interactive Data Template Application for the What To Do Application
-Version: 0.0.0.9000
+Version: 1.0.0
 Description:
     Launch an interactive web application for creating data templates for the What To Do application. Since the What To Do application requires data in a very specific format, this application is designed to help with preparing input data for the What To Do application. After providing the names of sites, features, and actions, a template Excel Spreadsheet can then be downloaded from this application. The template Excel Spreadsheet can then be populated with data (e.g. longitude/latitude of sites) and, subsequently, uploaded to the What To Do application.
 Authors@R: c(
