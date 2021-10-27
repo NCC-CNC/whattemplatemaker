@@ -10,6 +10,9 @@ default:
   # maximum number of characters in site, feature, and action names
   maximum_name_length: 50
 
+  # table width
+  table_width: "10%"
+
 production:
   app_prod: yes
 

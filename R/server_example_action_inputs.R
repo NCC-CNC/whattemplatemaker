@@ -44,11 +44,6 @@ server_example_action_inputs <- quote({
       curr_names, values[["action_data"]][[1]]
     )
 
-    print("curr_names")
-    print(curr_names)
-    print("curr_selected")
-    print(curr_selected)
-
     ## remove all options from action input
     shinyWidgets::updatePickerInput(
       session = session,
@@ -128,15 +123,6 @@ server_example_action_inputs <- quote({
       values[["action_data"]][[1]][na_idx] <- curr_new_names
     }
 
-    # update table
-    output$action_data_widget <- rhandsontable::renderRHandsontable({
-      rhandsontable::rhandsontable(
-        values[["action_data"]],
-        useTypes = TRUE,
-        width = 200,
-        stretchH = "all"
-       )
-    })
   })
 
 })

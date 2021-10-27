@@ -1,3 +1,4 @@
+/* general containers */
 .divCenter {
   display: flex;
   justify-content: center;
@@ -5,4 +6,83 @@
 
 .divShrink{
   display:inline-block;
+}
+
+/* panels */
+.navbarPanel{
+  padding-left: 5%;
+  margin-bottom: 10px !important;
+  background: #adb5bd;
+  border-radius: 0 !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 10px;
+  align-content: center;
+  align-items: center;
+}
+
+.introPanel{
+  margin: auto;
+  padding-top: 20px;
+  width: 30vw;
+  min-width: 400px;
+}
+
+.mainPanel{
+  padding-right: 5%;
+  /* max-width: 700px; */
+}
+
+.exportPanel{
+  margin: auto;
+  padding-top: 20px;
+  width: 30vw;
+  min-width: 400px;
+}
+
+.sidebarPanel{
+  height: calc(100vh - 70px);
+}
+
+.sidebarPanel .well form{
+  align-items: stretch;
+}
+
+/* table components */
+.tableHeader{
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+}
+
+.tableBtns{
+  margin-left: auto;
+}
+
+/* .handsontable{
+  overflow-x: visible;
+} */
+
+.handsontable {
+  overflow: visible;
+}
+
+.handsontable .wtHolder{
+  overflow-x: hidden;
+}
+
+/* glide */
+#main_glide{
+  margin-left: 10px;
+}
+
+.glideControlContainer {
+  display: flex;
+  padding-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  column-gap: 5px;
 }

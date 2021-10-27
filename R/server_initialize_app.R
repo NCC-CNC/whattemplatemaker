@@ -23,28 +23,35 @@ server_initialize_app <- quote({
   shinyjs::disable("download_btn")
 
   # initialize data in widgets
-  output$site_data_widget <- rhandsontable::renderRHandsontable({
-    rhandsontable::rhandsontable(
-      initial_site_data,
-      useTypes = TRUE,
-      width = 200,
-      stretchH = "all"
-    )
+  shiny::observeEvent(values[["site_data"]], {
+    output$site_data_widget <- rhandsontable::renderRHandsontable({
+      rhandsontable::rhandsontable(
+        values[["site_data"]],
+        useTypes = TRUE,
+        width = whattemplatemaker::get_golem_config("table_width"),
+        stretchH = "all",
+        overflow = "hidden"
+      )
+    })
   })
-  output$action_data_widget <- rhandsontable::renderRHandsontable({
-    rhandsontable::rhandsontable(
-      initial_action_data,
-      useTypes = TRUE,
-      width = 200,
-      stretchH = "all"
-    )
+  shiny::observeEvent(values[["feature_data"]], {
+    output$feature_data_widget <- rhandsontable::renderRHandsontable({
+      rhandsontable::rhandsontable(
+        values[["feature_data"]],
+        useTypes = TRUE,
+        width = whattemplatemaker::get_golem_config("table_width"),
+        stretchH = "all"
+      )
+    })
   })
-  output$feature_data_widget <- rhandsontable::renderRHandsontable({
-    rhandsontable::rhandsontable(
-      initial_feature_data,
-      useTypes = TRUE,
-       width = 200,
-      stretchH = "all"
-    )
+  shiny::observeEvent(values[["action_data"]], {
+    output$action_data_widget <- rhandsontable::renderRHandsontable({
+      rhandsontable::rhandsontable(
+        values[["action_data"]],
+        useTypes = TRUE,
+        width = whattemplatemaker::get_golem_config("table_width"),
+        stretchH = "all"
+      )
+    })
   })
 })
