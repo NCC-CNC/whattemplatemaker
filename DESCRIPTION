@@ -55,6 +55,7 @@ Collate:
     'run_app.R'
     'server_display_information.R'
     'server_download_data.R'
+    'server_example_action_inputs.R'
     'server_initialize_app.R'
     'server_resize_buttons.R'
     'utils_resize_table.R'

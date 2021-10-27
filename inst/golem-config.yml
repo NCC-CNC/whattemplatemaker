@@ -7,6 +7,9 @@ default:
   # number of default rows in the tables
   n_data_rows: 5
 
+  # maximum number of characters in site, feature, and action names
+  maximum_name_length: 50
+
 production:
   app_prod: yes
 

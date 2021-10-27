@@ -6,6 +6,32 @@ app_global <- quote({
   # load parameters for data handling
   parameters <- whatdataio::read_data_configuration()
 
+  # load example actions
+  example_action_data <- read.table(
+    system.file(
+      "extdata", "example-actions.csv", package = "whattemplatemaker"
+    ),
+    header = TRUE,
+    stringsAsFactors = FALSE,
+    sep = ","
+  )
+
+  # verify that example action names conform to limit
+  invalid_example_idx <- which(
+    nchar(example_action_data$action) >
+    whattemplatemaker::get_golem_config("maximum_name_length")
+  )
+  assertthat::assert_that(
+    length(invalid_example_idx) == 0,
+    msg = paste(
+      "the following example names are too long:",
+      paste(
+        paste0("\"", example_action_data$action[invalid_example_idx], "\""),
+        collapse = ", "
+      )
+    )
+  )
+
   # initialize data
   initial_site_data <- tibble::tibble(
     name = rep(

@@ -43,6 +43,9 @@ server_display_information <- quote({
     action_data <- values[["action_data"]]
     feature_data <- values[["feature_data"]]
 
+    # get character limits
+    n_char_limit <- whattemplatemaker::get_golem_config("maximum_name_length")
+
     # verify input data
     has_site_values <- whatdataio::has_valid_values(site_data[[1]])
     has_feature_values <- whatdataio::has_valid_values(feature_data[[1]])
@@ -50,8 +53,9 @@ server_display_information <- quote({
     unique_site_values <- whatdataio::has_unique_values(site_data[[1]])
     unique_feature_values <- whatdataio::has_unique_values(feature_data[[1]])
     unique_action_values <- whatdataio::has_unique_values(action_data[[1]])
-    has_short_action_names <-
-      all(nchar(as.character(action_data[[1]])) <= 14, na.rm = TRUE)
+    has_short_action_names <- all(
+      nchar(as.character(action_data[[1]])) <= n_char_limit, na.rm = TRUE
+    )
 
     # enable/display button
     if (has_site_values && has_feature_values && has_action_values &&
@@ -108,7 +112,9 @@ server_display_information <- quote({
         "has_short_action_names",
         title = "Oops",
         content = paste0(
-          "Each action name must be shorter than 14 characters in length."
+          "Each action name must be shorter than ",
+          n_char_limit,
+          " characters in length."
         ),
         append = FALSE
       )
