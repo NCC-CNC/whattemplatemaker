@@ -40,7 +40,8 @@ server_initialize_app <- quote({
         values[["feature_data"]],
         useTypes = TRUE,
         width = whattemplatemaker::get_golem_config("table_width"),
-        stretchH = "all"
+        stretchH = "all",
+        overflow = "hidden"
       )
     })
   })
@@ -50,7 +51,8 @@ server_initialize_app <- quote({
         values[["action_data"]],
         useTypes = TRUE,
         width = whattemplatemaker::get_golem_config("table_width"),
-        stretchH = "all"
+        stretchH = "all",
+        overflow = "hidden"
       )
     })
   })

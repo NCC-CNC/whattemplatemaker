@@ -11,7 +11,7 @@ default:
   maximum_name_length: 50
 
   # table width
-  table_width: "10%"
+  table_width: "100%"
 
 production:
   app_prod: yes

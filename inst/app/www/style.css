@@ -61,16 +61,13 @@
   margin-left: auto;
 }
 
-/* .handsontable{
-  overflow-x: visible;
-} */
-
 .handsontable {
   overflow: visible;
 }
 
 .handsontable .wtHolder{
   overflow-x: hidden;
+  /* width: 100% !important; */
 }
 
 /* glide */

@@ -139,6 +139,7 @@ app_ui <- function(request) {
             ## sidebar
             shiny::sidebarPanel(
               width = 4,
+              class = "sidebarPanel",
               shiny::h3("Feature details"),
               shiny::helpText("Enter in the names of each feature. These correspond to different biodiversity elements (e.g. populations, species, habitat types, forest cover) for which you wish to improve through effective management (e.g. increase population size, increase amount of available habitat). They can also include ecosystem services (e.g. carbon sequestration, human benefits from nature) that you wish to promote (e.g. increase amount of carbon that can be sequestered, increase amount of space for recreational activities). For example, these values could correspond to species names (e.g. \"Caribou\") or vegetation types (e.g. \"Alvar\")."),
               shiny::br(),
@@ -147,21 +148,39 @@ app_ui <- function(request) {
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
             ## main content
-            shiny::mainPanel(
-              shiny::fluidRow(
-                shiny::h5("Please insert feature names in the table below"),
-                shinyBS::bsButton(
-                  "feature_data_add_row_btn",
-                  label = "Add row",
-                  icon = shiny::icon("plus")
+            shiny::div(
+              class = "col-sm-7",
+              shiny::div(
+                class = "mainPanel",
+                shiny::div(
+                  class = "tableHeader",
+                  shiny::h5("Please insert feature names in the table below"),
+                  shiny::div(
+                    class = "tableBtns",
+                    shinyBS::tipify(
+                      title = "Insert row",
+                      shinyBS::bsButton(
+                        "feature_data_add_row_btn",
+                        label = NULL,
+                        size = "small",
+                        icon = shiny::icon("plus")
+                      )
+                    ),
+                    shinyBS::tipify(
+                      title = "Remove row",
+                      shinyBS::bsButton(
+                        "feature_data_remove_row_btn",
+                        label = NULL,
+                        size = "small",
+                        icon = shiny::icon("minus")
+                      )
+                    )
+                  )
                 ),
-                shinyBS::bsButton(
-                  "feature_data_remove_row_btn",
-                  label = "Remove row",
-                  icon = shiny::icon("minus")
+                shiny::div(
+                  rhandsontable::rHandsontableOutput("feature_data_widget")
                 )
-              ),
-              rhandsontable::rHandsontableOutput("feature_data_widget"),
+              )
             )
           )
         ),
@@ -172,6 +191,7 @@ app_ui <- function(request) {
             ## sidebar
             shiny::sidebarPanel(
               width = 4,
+              class = "sidebarPanel",
               shiny::h3("Actions details"),
               shiny::helpText("Enter in the names of management actions. These correspond to activities that are designed to help conserve the features. They can include actions that are currently being implemented, and also activities that could be implemented in the future."),
               shiny::br(),
@@ -205,21 +225,39 @@ app_ui <- function(request) {
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
             ## main content
-            shiny::mainPanel(
-              shiny::fluidRow(
-                shiny::h5("Please insert action names in the table below"),
-                shinyBS::bsButton(
-                  "action_data_add_row_btn",
-                  label = "Add row",
-                  icon = shiny::icon("plus")
+            shiny::div(
+              class = "col-sm-7",
+              shiny::div(
+                class = "mainPanel",
+                shiny::div(
+                  class = "tableHeader",
+                  shiny::h5("Please insert action names in the table below"),
+                  shiny::div(
+                    class = "tableBtns",
+                    shinyBS::tipify(
+                      title = "Insert row",
+                      shinyBS::bsButton(
+                        "action_data_add_row_btn",
+                        label = NULL,
+                        size = "small",
+                        icon = shiny::icon("plus")
+                      )
+                    ),
+                    shinyBS::tipify(
+                      title = "Remove row",
+                      shinyBS::bsButton(
+                        "action_data_remove_row_btn",
+                        label = NULL,
+                        size = "small",
+                        icon = shiny::icon("minus")
+                      )
+                    )
+                  )
                 ),
-                shinyBS::bsButton(
-                  "action_data_remove_row_btn",
-                  label = "Remove row",
-                  icon = shiny::icon("minus")
+                shiny::div(
+                  rhandsontable::rHandsontableOutput("action_data_widget")
                 )
-              ),
-              rhandsontable::rHandsontableOutput("action_data_widget"),
+              )
             )
           )
         ),
