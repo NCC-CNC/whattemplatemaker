@@ -18,7 +18,7 @@ app_global <- quote({
 
   # verify that example action names conform to limit
   invalid_example_idx <- which(
-    nchar(example_action_data$action) >
+    nchar(example_action_data$name) >
     whattemplatemaker::get_golem_config("maximum_name_length")
   )
   assertthat::assert_that(
@@ -26,7 +26,7 @@ app_global <- quote({
     msg = paste(
       "the following example names are too long:",
       paste(
-        paste0("\"", example_action_data$action[invalid_example_idx], "\""),
+        paste0("\"", example_action_data$name[invalid_example_idx], "\""),
         collapse = ", "
       )
     )

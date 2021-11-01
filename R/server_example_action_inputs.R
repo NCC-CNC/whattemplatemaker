@@ -13,46 +13,6 @@
 #' @noRd
 server_example_action_inputs <- quote({
 
-  # current action region select input
-  shiny::observeEvent(input$action_region_input, {
-    # specify dependencies
-    shiny::req(input$action_region_input)
-
-    # if region input has nothing selected...
-    if (identical(input$action_region_input, "")) {
-      ## remove all options from action input
-      shinyWidgets::updatePickerInput(
-        session = session,
-        inputId = "action_name_input",
-        choices = NULL,
-        selected = NULL
-      )
-      ## disable action input
-      shinyjs::disable("action_name_input")
-      ## end logic
-      return()
-    }
-
-    # if something is selected...
-    ## determine which actions names should be added to the name picker
-    idx <- which(
-      example_action_data$region == input$action_region_input
-    )
-    curr_names <- example_action_data$action[idx]
-    ## determine which actions are already present in the table
-    curr_selected <- base::intersect(
-      curr_names, values[["action_data"]][[1]]
-    )
-
-    ## remove all options from action input
-    shinyWidgets::updatePickerInput(
-      session = session,
-      inputId = "action_name_input",
-      choices = curr_names,
-      selected = curr_selected
-    )
-  })
-
   # update action name input if new action is entered into the table
   shiny::observeEvent(values[["action_data"]], {
     # specify dependencies
@@ -76,6 +36,7 @@ server_example_action_inputs <- quote({
     }
   })
 
+  # update action name in table if option is selected in drop down menu
   shiny::observeEvent(input$action_name_input, {
     # specify dependencies
     shiny::req(input$action_name_input)

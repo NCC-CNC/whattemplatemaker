@@ -198,25 +198,13 @@ app_ui <- function(request) {
               shiny::helpText("To help you get started with this, we have provided some example management actions. Please select your region below, and then select any of the suggested actions that you think might be relevant for managing the features inside your sites. In addition to these examples, please enter in any further actions that might also be relevant."),
               shiny::br(),
               shinyWidgets::pickerInput(
-                inputId = "action_region_input",
+                inputId = "action_name_input",
                 label = NULL,
-                choices = unique(example_action_data$region),
-                multiple = FALSE,
+                choices = example_action_data$name,
+                multiple = TRUE,
                 options = list(
-                  title = "Select your region..."
-                )
-              ),
-              shiny::conditionalPanel(
-                "input.action_region_input.length > 0",
-                shinyWidgets::pickerInput(
-                  inputId = "action_name_input",
-                  label = NULL,
-                  choices = "",
-                  multiple = TRUE,
-                  options = list(
-                    title = "Select suggested actions...",
-                    `selected-text-format` = "count > 3"
-                  )
+                  title = "Select suggested actions...",
+                  `selected-text-format` = "count > 3"
                 )
               ),
               shiny::br(),
