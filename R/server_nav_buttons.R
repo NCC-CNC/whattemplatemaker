@@ -12,5 +12,10 @@
 #'
 #' @noRd
 server_nav_buttons <- quote({
- # TODO
+  # site screen
+
+  # feature screen
+
+  # action screen
+
 })

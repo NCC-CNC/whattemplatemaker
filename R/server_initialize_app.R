@@ -17,7 +17,8 @@ server_initialize_app <- quote({
   values <- shiny::reactiveValues(
     site_data = initial_site_data,
     action_data = initial_action_data,
-    feature_data = initial_feature_data)
+    feature_data = initial_feature_data
+  )
 
   # disable download button by default
   shinyjs::disable("download_btn")
@@ -56,4 +57,28 @@ server_initialize_app <- quote({
       )
     })
   })
+
+  # store data
+  shiny::observeEvent(input$site_data_widget, {
+    if (!is.null(input$site_data_widget)) {
+      values[["site_data"]] <- sanitize_data(
+        rhandsontable::hot_to_r(input$site_data_widget)
+      )
+    }
+  })
+  shiny::observeEvent(input$action_data_widget, {
+    if (!is.null(input$action_data_widget)) {
+      values[["action_data"]] <- sanitize_data(
+        rhandsontable::hot_to_r(input$action_data_widget)
+      )
+    }
+  })
+  shiny::observeEvent(input$feature_data_widget, {
+    if (!is.null(input$feature_data_widget)) {
+      values[["feature_data"]] <- sanitize_data(
+        rhandsontable::hot_to_r(input$feature_data_widget)
+      )
+    }
+  })
+
 })

@@ -12,6 +12,8 @@
 #'
 #' @noRd
 server_glide <- quote({
+
+  # update nav bar to display current stage
   shiny::observeEvent(input$shinyglide_index_main_glide, {
     # specify dependency
     shiny::req(input$shinyglide_index_main_glide)

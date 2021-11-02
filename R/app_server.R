@@ -18,8 +18,8 @@ app_server <- function(input, output, session) {
   # example action inputs
   eval(server_example_action_inputs)
 
-  # display information
-  eval(server_display_information)
+  # input validation
+  eval(server_input_validation)
 
   # resize buttons
   eval(server_resize_buttons)

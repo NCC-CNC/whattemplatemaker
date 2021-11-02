@@ -91,7 +91,7 @@ app_ui <- function(request) {
               shiny::h3("Site details"),
               shiny::helpText("Enter in the names of each site. These can include places that you are already managing for conservation. They can also include new places that you might be considering to acquire for future conservation efforts. For example, these values could correspond to the names of places (e.g. \"Vulture Valley\"), database identifiers (e.g. \"12345A\"), or a combination of place names and identifiers (e.g. \"Vulture Valley (#12345A)\"). It is important that each site has a distinctly different name."),
               shiny::br(),
-              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\"). Please note that you can't have any blank cells in the table, so any extra rows must be deleted."),
+              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\")."),
               shiny::br(),
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
@@ -127,6 +127,10 @@ app_ui <- function(request) {
                 ),
                 shiny::div(
                   rhandsontable::rHandsontableOutput("site_data_widget")
+                ),
+                shiny::br(),
+                shiny::div(
+                  shinyBS::bsAlert(anchorId = "site_alert")
                 )
               )
             )
@@ -143,7 +147,7 @@ app_ui <- function(request) {
               shiny::h3("Feature details"),
               shiny::helpText("Enter in the names of each feature. These correspond to different biodiversity elements (e.g. populations, species, habitat types, forest cover) for which you wish to improve through effective management (e.g. increase population size, increase amount of available habitat). They can also include ecosystem services (e.g. carbon sequestration, human benefits from nature) that you wish to promote (e.g. increase amount of carbon that can be sequestered, increase amount of space for recreational activities). For example, these values could correspond to species names (e.g. \"Caribou\") or vegetation types (e.g. \"Alvar\")."),
               shiny::br(),
-              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\"). Please note that you can't have any blank cells in the table, so any extra rows must be deleted."),
+              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\")."),
               shiny::br(),
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
@@ -179,6 +183,10 @@ app_ui <- function(request) {
                 ),
                 shiny::div(
                   rhandsontable::rHandsontableOutput("feature_data_widget")
+                ),
+                shiny::br(),
+                shiny::div(
+                  shinyBS::bsAlert(anchorId = "feature_alert")
                 )
               )
             )
@@ -195,7 +203,7 @@ app_ui <- function(request) {
               shiny::h3("Actions details"),
               shiny::helpText("Enter in the names of management actions. These correspond to activities that are designed to help conserve the features. They can include actions that are currently being implemented, and also activities that could be implemented in the future."),
               shiny::br(),
-              shiny::helpText("To help you get started with this, we have provided some example management actions. Please select your region below, and then select any of the suggested actions that you think might be relevant for managing the features inside your sites. In addition to these examples, please enter in any further actions that might also be relevant."),
+              shiny::helpText("To help you get started with this, we have provided some example management actions. Please have a look through the example actions and select that you think might be relevant for managing the features inside your sites. In addition to these examples, please enter into the table any other actions that might also be relevant."),
               shiny::br(),
               shinyWidgets::pickerInput(
                 inputId = "action_name_input",
@@ -208,7 +216,7 @@ app_ui <- function(request) {
                 )
               ),
               shiny::br(),
-              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\"). Please note that you can't have any blank cells in the table, so any extra rows must be deleted."),
+              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\")."),
               shiny::br(),
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
@@ -244,6 +252,10 @@ app_ui <- function(request) {
                 ),
                 shiny::div(
                   rhandsontable::rHandsontableOutput("action_data_widget")
+                ),
+                shiny::br(),
+                shiny::div(
+                  shinyBS::bsAlert(anchorId = "action_alert")
                 )
               )
             )
