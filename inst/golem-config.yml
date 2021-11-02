@@ -8,7 +8,7 @@ default:
   n_data_rows: 5
 
   # maximum number of characters in site, feature, and action names
-  maximum_name_length: 50
+  maximum_name_length: 100
 
   # table width
   table_width: "100%"
