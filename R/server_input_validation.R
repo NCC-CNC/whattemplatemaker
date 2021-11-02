@@ -35,9 +35,6 @@ server_input_validation <- quote({
     ## run validation checks
     v <- validate_data(values[["site_data"]])
 
-    print("validation")
-    print(v)
-
     ## update navigation buttons if needed
     update_nav_buttons(all(vapply(v, `[[`, logical(1), "success")))
 
