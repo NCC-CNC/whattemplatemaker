@@ -52,6 +52,7 @@
 
 /* navbar */
 .navbar{
+  cursor: default;
   margin-bottom: 5px !important;
 }
 
