@@ -62,16 +62,19 @@ app_ui <- function(request) {
         custom_controls = htmltools::tags$div(
           class = "glideControlContainer",
           htmltools::tags$div(
-            shinyBS::tipify(
-              shinyglide::prevButton(),
-              title = "Previous section"
-            )
+            `data-toggle` = "tooltip",
+            `data-placement` = "bottom",
+            `data-trigger` = "hover",
+            title = "Previous section",
+            shinyglide::prevButton(),
           ),
           htmltools::tags$div(
-            shinyBS::tipify(
-              shinyglide::nextButton(),
-              title = "Next section"
-            )
+            `data-toggle` = "tooltip",
+            `data-placement` = "bottom",
+            `data-trigger` = "hover",
+            title = "Previous section",
+            shinyglide::nextButton(),
+            title = "Next section"
           )
         ),
 

@@ -33,6 +33,7 @@ server_glide <- quote({
       "nav_intro_btn", "nav_site_btn", "nav_feature_btn",
       "nav_action_btn", "nav_downloads_btn"
     )[input$shinyglide_index_main_glide + 1]
+
     # update nav bar button color to show current stage
     if (!is.na(screen_id)) {
       shinyjs::addClass(

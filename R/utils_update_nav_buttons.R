@@ -23,6 +23,9 @@ update_nav_buttons <- function(x) {
     selector = ".glideControlContainer .btn"
   )
 
+  # remove all active tooltips to avoid stuck tooltips on disabled elements
+  shinyjs::runjs("$('[data-toggle=\"tooltip\"]').tooltip('hide');")
+
   # return result
   invisible(TRUE)
 

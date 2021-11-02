@@ -81,4 +81,7 @@ server_initialize_app <- quote({
     }
   })
 
+  # initialize tooltips
+  shinyjs::runjs("$('[data-toggle=\"tooltip\"]').tooltip();")
+
 })
