@@ -278,7 +278,7 @@ app_ui <- function(request) {
             shiny::helpText("Congratulations - you've entered in all the information! Please double check that you've included all the sites, features, and actions; and download the Excel Spreadsheet and spatial (ESRI Shapefile) dataset to your computer. After downloading these files, please open the Excel Spreadsheet and fill in the data as needed (don't worry, the spreadsheet contains instructions for filling in data)."),
             shiny::br(),
             shiny::div(
-              class = "divCenter",
+              class = "exportButtons",
               shiny::downloadButton(
                 outputId = "download_template_btn",
                 label = "Download Excel Spreadsheet"

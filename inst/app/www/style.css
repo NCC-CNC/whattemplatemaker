@@ -83,6 +83,13 @@
   /* width: 100% !important; */
 }
 
+/* export buttons */
+.exportButtons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
 /* glide */
 #main_glide{
   margin-left: 10px;
