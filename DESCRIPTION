@@ -58,7 +58,6 @@ Collate:
     'server_glide.R'
     'server_initialize_app.R'
     'server_input_validation.R'
-    'server_nav_buttons.R'
     'server_resize_buttons.R'
     'utils_resize_table.R'
     'utils_sanitize_data.R'

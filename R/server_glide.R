@@ -19,21 +19,15 @@ server_glide <- quote({
     shiny::req(input$shinyglide_index_main_glide)
 
     # reset nav bar button colors
-    shinyBS::updateButton(
-      session = session, inputId = "nav_intro_btn", style = "default"
+    shinyjs::addClass(
+      selector = ".navbar .label-primary",
+      class = "label-default"
     )
-    shinyBS::updateButton(
-      session = session, inputId = "nav_site_btn", style = "default"
+    shinyjs::removeClass(
+      selector = ".navbar .label-primary",
+      class = "label-primary"
     )
-    shinyBS::updateButton(
-      session = session, inputId = "nav_feature_btn", style = "default"
-    )
-    shinyBS::updateButton(
-      session = session, inputId = "nav_action_btn", style = "default"
-    )
-    shinyBS::updateButton(
-      session = session, inputId = "nav_downloads_btn", style = "default"
-    )
+
     # find name of button to update
     screen_id <- c(
       "nav_intro_btn", "nav_site_btn", "nav_feature_btn",
@@ -41,8 +35,9 @@ server_glide <- quote({
     )[input$shinyglide_index_main_glide + 1]
     # update nav bar button color to show current stage
     if (!is.na(screen_id)) {
-      shinyBS::updateButton(
-        session = session, inputId = screen_id, style = "primary"
+      shinyjs::addClass(
+        id = screen_id,
+        class = "label-primary"
       )
     }
   })

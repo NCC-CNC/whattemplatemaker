@@ -10,8 +10,8 @@
 
 /* panels */
 .navbarPanel{
-  padding-left: 5%;
-  margin-bottom: 10px !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background: #adb5bd;
   border-radius: 0 !important;
   display: flex;
@@ -20,6 +20,7 @@
   column-gap: 10px;
   align-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .introPanel{
@@ -48,6 +49,17 @@
 .sidebarPanel .well form{
   align-items: stretch;
 }
+
+/* navbar */
+.navbar{
+  margin-bottom: 5px !important;
+}
+
+.navbar h3{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
 
 /* table components */
 .tableHeader{

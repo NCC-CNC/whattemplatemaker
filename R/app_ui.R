@@ -16,35 +16,40 @@ app_ui <- function(request) {
     shiny::fillPage(
 
       htmltools::tags$div(
-        class = "navbar nav-pills navbarPanel",
-        shinyBS::bsButton(
-          "nav_intro_btn",
-          label = "(1) Introduction",
-          style = "primary"
-        ),
-        shiny::icon("chevron-right"),
-        shinyBS::bsButton(
-          "nav_site_btn",
-          label = "(2) Site details",
-          style = "default"
-        ),
-        shiny::icon("chevron-right"),
-        shinyBS::bsButton(
-          "nav_feature_btn",
-          label = "(3) Feature details",
-          style = "default"
-        ),
-        shiny::icon("chevron-right"),
-        shinyBS::bsButton(
-          "nav_action_btn",
-          label = "(4) Action details",
-          style = "default"
-        ),
-        shiny::icon("chevron-right"),
-        shinyBS::bsButton(
-          "nav_downloads_btn",
-          label = "(5) Downloads",
-          style = "default"
+        class = "navbar",
+        htmltools::tags$h3(
+          htmltools::tags$div(
+            class = "navbarPanel",
+            htmltools::tags$span(
+              id = "nav_intro_btn",
+              class = "label label-primary",
+              "(1) Introduction"
+            ),
+            shiny::icon("chevron-right"),
+            htmltools::tags$span(
+              id = "nav_site_btn",
+              class = "label label-default",
+              "(2) Site details"
+            ),
+            shiny::icon("chevron-right"),
+            htmltools::tags$span(
+              id = "nav_feature_btn",
+              class = "label label-default",
+              "(3) Feature details"
+            ),
+            shiny::icon("chevron-right"),
+            htmltools::tags$span(
+              id = "nav_action_btn",
+              class = "label label-default",
+              "(4) Action details"
+            ),
+            shiny::icon("chevron-right"),
+            htmltools::tags$span(
+              id = "nav_downloads_btn",
+              class = "label label-default",
+              "(5) Downloads"
+            )
+          )
         )
       ),
 

@@ -10,9 +10,6 @@ app_server <- function(input, output, session) {
   eval(server_initialize_app)
 
   # navigation buttons
-  eval(server_nav_buttons)
-
-  # navigation buttons
   eval(server_glide)
 
   # example action inputs
