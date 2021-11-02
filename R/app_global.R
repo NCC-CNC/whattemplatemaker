@@ -17,16 +17,34 @@ app_global <- quote({
   )
 
   # verify that example action names conform to limit
+  ## id
   invalid_example_idx <- which(
-    nchar(example_action_data$name) >
-    whattemplatemaker::get_golem_config("maximum_name_length")
+    nchar(example_action_data$id) >
+    whattemplatemaker::get_golem_config("maximum_id_length")
   )
   assertthat::assert_that(
     length(invalid_example_idx) == 0,
     msg = paste(
-      "the following example names are too long:",
+      "the following example ids are too long:",
       paste(
-        paste0("\"", example_action_data$name[invalid_example_idx], "\""),
+        paste0("\"", example_action_data$id[invalid_example_idx], "\""),
+        collapse = ", "
+      )
+    )
+  )
+  ## description
+  invalid_example_idx <- which(
+    nchar(example_action_data$description) >
+    whattemplatemaker::get_golem_config("maximum_description_length")
+  )
+  assertthat::assert_that(
+    length(invalid_example_idx) == 0,
+    msg = paste(
+      "the following example descriptions are too long:",
+      paste(
+        paste0(
+          "\"", example_action_data$description[invalid_example_idx], "\""
+        ),
         collapse = ", "
       )
     )
@@ -34,21 +52,33 @@ app_global <- quote({
 
   # initialize data
   initial_site_data <- tibble::tibble(
-    name = rep(
+    id = rep(
+      NA_character_,
+      whattemplatemaker::get_golem_config("n_data_rows")
+    ),
+    description = rep(
       NA_character_,
       whattemplatemaker::get_golem_config("n_data_rows")
     )
   )
 
   initial_action_data <- tibble::tibble(
-    name = rep(
+    id = rep(
+      NA_character_,
+      whattemplatemaker::get_golem_config("n_data_rows")
+    ),
+    description = rep(
       NA_character_,
       whattemplatemaker::get_golem_config("n_data_rows")
     )
   )
 
   initial_feature_data <- tibble::tibble(
-    name = rep(
+    id = rep(
+      NA_character_,
+      whattemplatemaker::get_golem_config("n_data_rows")
+    ),
+    description = rep(
       NA_character_,
       whattemplatemaker::get_golem_config("n_data_rows")
     )

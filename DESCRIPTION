@@ -51,6 +51,8 @@ Collate:
     'app_server.R'
     'app_ui.R'
     'internal.R'
+    'fct_render_data_validation_alerts.R'
+    'fct_validate_data.R'
     'package.R'
     'run_app.R'
     'server_download_data.R'
