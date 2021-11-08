@@ -192,9 +192,9 @@ app_ui <- function(request) {
               shiny::helpText("To help you get started with this, we have provided some example management actions. Please have a look through the example actions and select that you think might be relevant for managing the features inside your sites. In addition to these examples, please enter into the table any other actions that might also be relevant."),
               shiny::br(),
               shinyWidgets::pickerInput(
-                inputId = "action_name_input",
+                inputId = "action_id_input",
                 label = NULL,
-                choices = example_action_data$name,
+                choices = example_action_data$id,
                 multiple = TRUE,
                 options = list(
                   title = "Select suggested actions...",

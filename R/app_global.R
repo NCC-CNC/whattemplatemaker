@@ -32,6 +32,10 @@ app_global <- quote({
       )
     )
   )
+  assertthat::assert_that(
+    anyDuplicated(example_action_data$id) == 0L,
+    msg = "cannot have duplicated ids"
+  )
   ## description
   invalid_example_idx <- which(
     nchar(example_action_data$description) >
