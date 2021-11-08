@@ -31,10 +31,10 @@ Suggests:
     knitr (>= 1.2.0),
     roxygen2 (>= 6.1.1),
     rmarkdown (>= 1.10),
-    sf (>= 0.9-8),
 Depends:
     R (>= 4.0.0),
     shinyBS (>= 0.6.1),
+    sf (>= 0.9-8),
 License: GPL-3
 Encoding: UTF-8
 URL: https://NCC-CNC.github.io/whattemplatemaker/
@@ -44,7 +44,8 @@ RoxygenNote: 7.1.1
 Language: en-US
 Remotes:
   r-lib/pkgdown,
-  NCC-CNC/whatdataio
+  NCC-CNC/whatdataio,
+  NCC-CNC/leaflet.extras@draw_options
 Collate:
     'app_config.R'
     'app_global.R'
@@ -61,6 +62,9 @@ Collate:
     'server_initialize_app.R'
     'server_input_validation.R'
     'server_resize_buttons.R'
+    'server_site_map.R'
+    'ui_site_leaflet_map.R'
+    'utils_addSimpleFeatures.R'
     'utils_resize_table.R'
     'utils_sanitize_data.R'
     'utils_update_nav_buttons.R'

@@ -13,22 +13,6 @@
 #' @noRd
 server_resize_buttons <- quote({
 
-  # site data
-  ## add row
-  shiny::observeEvent(input$site_data_add_row_btn, {
-    values[["site_data"]] <- resize_table(
-      values[["site_data"]],
-      nrow(values[["site_data"]]) + 1
-    )
-  })
-  ## add remove row
-  shiny::observeEvent(input$site_data_remove_row_btn, {
-    values[["site_data"]] <- resize_table(
-      values[["site_data"]],
-      nrow(values[["site_data"]]) - 1
-    )
-  })
-
   # feature data
   ## add row
   shiny::observeEvent(input$feature_data_add_row_btn, {

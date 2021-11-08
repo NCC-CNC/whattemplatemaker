@@ -45,13 +45,14 @@ server_input_validation <- quote({
       alertIdPrefix = "site",
       validation_results = v
     )
+
   })
 
   # feature data validation
   shiny::observeEvent(feature_data_trigger(), {
     ## initialization
     shiny::req(input$shinyglide_index_main_glide)
-    if (input$shinyglide_index_main_glide != 1) {
+    if (input$shinyglide_index_main_glide != 2) {
       return()
     }
 
@@ -74,7 +75,7 @@ server_input_validation <- quote({
   shiny::observeEvent(action_data_trigger(), {
     ## initialization
     shiny::req(input$shinyglide_index_main_glide)
-    if (input$shinyglide_index_main_glide != 1) {
+    if (input$shinyglide_index_main_glide != 3) {
       return()
     }
 

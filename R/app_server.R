@@ -12,6 +12,9 @@ app_server <- function(input, output, session) {
   # navigation buttons
   eval(server_glide)
 
+  # site_map
+  eval(server_site_map)
+
   # example action inputs
   eval(server_example_action_inputs)
 

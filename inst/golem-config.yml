@@ -16,6 +16,10 @@ default:
   # table width
   table_width: "100%"
 
+  # site polygon colors
+  site_fill_color: "#ffff33"
+  site_color: "#ffff33"
+
 production:
   app_prod: yes
 

@@ -108,31 +108,9 @@ app_ui <- function(request) {
               class = "col-sm-7",
               shiny::div(
                 class = "mainPanel",
-                shiny::div(
-                  class = "tableHeader",
-                  shiny::h5("Please insert site names in the table below"),
-                  shiny::div(
-                    class = "tableBtns",
-                    shinyBS::tipify(
-                      title = "Insert row",
-                      shinyBS::bsButton(
-                        "site_data_add_row_btn",
-                        label = NULL,
-                        size = "small",
-                        icon = shiny::icon("plus")
-                      )
-                    ),
-                    shinyBS::tipify(
-                      title = "Remove row",
-                      shinyBS::bsButton(
-                        "site_data_remove_row_btn",
-                        label = NULL,
-                        size = "small",
-                        icon = shiny::icon("minus")
-                      )
-                    )
-                  )
-                ),
+                shiny::h5("Please insert site details below"),
+                mapedit::editModUI("site_edit"),
+                shiny::br(),
                 shiny::div(
                   rhandsontable::rHandsontableOutput("site_data_widget")
                 ),
@@ -166,7 +144,7 @@ app_ui <- function(request) {
                 class = "mainPanel",
                 shiny::div(
                   class = "tableHeader",
-                  shiny::h5("Please insert feature names in the table below"),
+                  shiny::h5("Please insert feature details in the table below"),
                   shiny::div(
                     class = "tableBtns",
                     shinyBS::tipify(
@@ -235,7 +213,7 @@ app_ui <- function(request) {
                 class = "mainPanel",
                 shiny::div(
                   class = "tableHeader",
-                  shiny::h5("Please insert action names in the table below"),
+                  shiny::h5("Please insert action details in the table below"),
                   shiny::div(
                     class = "tableBtns",
                     shinyBS::tipify(

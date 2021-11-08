@@ -41,7 +41,7 @@ validate_data <- function(x) {
       id = "row_valid",
       title = "Oops",
       details = paste(
-        "Each row must have values both the \"id\" and",
+        "Each row must have values in both the \"id\" and",
         "\"description\" columns."
       ),
       success = isTRUE(all(is.na(x$id) == is.na(x$description)))
@@ -52,7 +52,7 @@ validate_data <- function(x) {
       id = "row_min",
       title = "Oops",
       details = paste(
-        "Please provide in details for at least one row in the table."
+        "Please provide details for at least one row in the table."
       ),
       success = isTRUE(length(curr_id) >= 1) || isTRUE(length(curr_desc) >= 1)
     ),

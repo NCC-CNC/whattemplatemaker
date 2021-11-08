@@ -52,14 +52,9 @@ app_global <- quote({
 
   # initialize data
   initial_site_data <- tibble::tibble(
-    id = rep(
-      NA_character_,
-      whattemplatemaker::get_golem_config("n_data_rows")
-    ),
-    description = rep(
-      NA_character_,
-      whattemplatemaker::get_golem_config("n_data_rows")
-    )
+    leaflet_id = character(0),
+    id = character(0),
+    description = character(0)
   )
 
   initial_action_data <- tibble::tibble(
@@ -81,6 +76,31 @@ app_global <- quote({
     description = rep(
       NA_character_,
       whattemplatemaker::get_golem_config("n_data_rows")
+    )
+  )
+
+  initial_site_geometry_data <- sf::st_sf(
+    leaflet_id = character(0),
+    id = character(0),
+    description = character(0),
+    geometry = sf::st_sfc(crs = 4326)
+  )
+
+  mapedit_opts <- list(
+    polylineOptions = FALSE,
+    polygonOptions = leaflet.extras::drawPolygonOptions(
+      shapeOptions = leaflet.extras::drawShapeOptions(,
+        color = whattemplatemaker::get_golem_config("site_color"),
+        fillColor = whattemplatemaker::get_golem_config("site_fill_color")
+      )
+    ),
+    circleOptions = FALSE,
+    rectangleOptions = FALSE,
+    markerOptions = FALSE,
+    circleMarkerOptions = FALSE,
+    editOptions = leaflet.extras::editToolbarOptions(
+      edit = TRUE, remove = TRUE, selectedPathOptions = NULL,
+      allowIntersection = TRUE
     )
   )
 

@@ -16,6 +16,7 @@ server_initialize_app <- quote({
   # initialize data
   values <- shiny::reactiveValues(
     site_data = initial_site_data,
+    site_geometry_data = initial_site_geometry_data,
     action_data = initial_action_data,
     feature_data = initial_feature_data
   )
@@ -23,11 +24,11 @@ server_initialize_app <- quote({
   # disable download button by default
   shinyjs::disable("download_btn")
 
-  # initialize data in widgets
+  # initialize data in table widgets
   shiny::observeEvent(values[["site_data"]], {
     output$site_data_widget <- rhandsontable::renderRHandsontable({
       rhandsontable::rhandsontable(
-        values[["site_data"]],
+        values[["site_data"]][, c("id", "description"), drop = FALSE],
         useTypes = TRUE,
         width = whattemplatemaker::get_golem_config("table_width"),
         stretchH = "all",
@@ -58,14 +59,18 @@ server_initialize_app <- quote({
     })
   })
 
+  # initialize data in map edit widgets
+  m <- site_leaflet_map()
+  site_map_ns <- shiny::NS("site_edit")
+  site_module <- shiny::callModule(
+    mapedit::editMod,
+    "site_edit",
+    leafmap = m,
+    targetLayerId = "sites",
+    editorOptions = mapedit_opts
+  )
+
   # store data
-  shiny::observeEvent(input$site_data_widget, {
-    if (!is.null(input$site_data_widget)) {
-      values[["site_data"]] <- sanitize_data(
-        rhandsontable::hot_to_r(input$site_data_widget)
-      )
-    }
-  })
   shiny::observeEvent(input$action_data_widget, {
     if (!is.null(input$action_data_widget)) {
       values[["action_data"]] <- sanitize_data(
