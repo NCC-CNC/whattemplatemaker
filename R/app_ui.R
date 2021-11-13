@@ -303,7 +303,14 @@ app_ui <- function(request) {
           shiny::wellPanel(
             class = "exportPanel",
             shiny::h3("Downloads"),
-            shiny::helpText("Congratulations - you've entered in all the information! Please double check that you've included all the sites, features, and actions; and download the Excel Spreadsheet and spatial (ESRI Shapefile) dataset to your computer. After downloading these files, please open the Excel Spreadsheet and fill in the data as needed (don't worry, the spreadsheet contains instructions for filling in data)."),
+            shiny::conditionalPanel(
+              condition = "input.site_checkbox > 0.5",
+              shiny::helpText("Congratulations - you've entered in all the information! Please double check that you've included all the sites, features, and actions. Next, click the buttons below to download an Excel Spreadsheet and spatial (ESRI Shapefile) dataset to your computer. After downloading these files, please open the Excel Spreadsheet and follow the instructions inside it to enter in your data.")
+            ),
+            shiny::conditionalPanel(
+              condition = "input.site_checkbox < 0.5",
+              shiny::helpText("Congratulations - you've entered in all the information! Please double check that you've included all the sites, features, and actions. Next, click the button below to download an Excel Spreadsheet to your computer. After downloading the file, please open it and follow the instructions inside it to enter in your data.")
+            ),
             shiny::br(),
             shiny::div(
               class = "exportButtons",
@@ -311,9 +318,12 @@ app_ui <- function(request) {
                 outputId = "download_template_btn",
                 label = "Download Excel Spreadsheet"
               ),
-              shiny::downloadButton(
-                outputId = "download_spatial_btn",
-                label = "Download Spatial Dataset"
+              shiny::conditionalPanel(
+                condition = "input.site_checkbox > 0.5",
+                shiny::downloadButton(
+                  outputId = "download_spatial_btn",
+                  label = "Download Spatial Dataset"
+                )
               )
             )
           )
