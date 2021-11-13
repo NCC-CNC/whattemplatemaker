@@ -906,6 +906,18 @@
       "Repository": "CRAN",
       "Hash": "ed95895886dab6d2a584da45503555da"
     },
+    "reactlog": {
+      "Package": "reactlog",
+      "Version": "1.1.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "reactlog",
+      "RemoteUsername": "rstudio",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "8344895fdcd1a5a07f37dafad3d6f4b21c54c64a",
+      "Hash": "767ef949abe008d5bc4f4090163c9703"
+    },
     "rematch": {
       "Package": "rematch",
       "Version": "1.0.1",

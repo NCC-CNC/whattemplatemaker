@@ -62,12 +62,7 @@ site_leaflet_map <- function() {
     map = map,
     layerId = "sites",
     group = "sites",
-    geojson = '
-      {
-        "type": "FeatureCollection",
-        "features": []
-      }
-    '
+    geojson = '{"type": "FeatureCollection", "features": []}'
   )
 
   # return map

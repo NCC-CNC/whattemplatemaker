@@ -9,8 +9,14 @@ app_server <- function(input, output, session) {
   # initialize application
   eval(server_initialize_app)
 
+  # data observers
+  eval(server_observe_data)
+
   # navigation buttons
   eval(server_glide)
+
+  # site_checkbox
+  eval(server_site_checkbox)
 
   # site_map
   eval(server_site_map)

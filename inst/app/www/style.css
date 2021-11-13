@@ -69,13 +69,23 @@
 /* table components */
 .tableHeader{
   display: flex;
+  height: 35px;
   flex-wrap: nowrap;
   align-content: center;
   align-items: center;
+  justify-content: space-between;
 }
 
-.tableBtns{
-  margin-left: auto;
+.tableHeader .checkbox{
+  margin-bottom: 0 !important;
+}
+
+.tableHeader .form-group.shiny-input-container{
+  margin-bottom: 10px !important;
+}
+
+.tableBtnsContainer{
+  min-width: 70px;
 }
 
 .handsontable {

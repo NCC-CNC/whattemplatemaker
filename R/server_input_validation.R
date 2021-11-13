@@ -1,6 +1,6 @@
 #' Sever function: input validation
 #'
-#' Set behavior for nput validation.
+#' Set behavior for input validation.
 #'
 #' @details
 #' This object is designed to be used within [app_server] function.

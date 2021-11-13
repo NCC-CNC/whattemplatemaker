@@ -108,15 +108,65 @@ app_ui <- function(request) {
               class = "col-sm-7",
               shiny::div(
                 class = "mainPanel",
-                shiny::h5("Please insert site details below"),
-                mapedit::editModUI("site_edit"),
-                shiny::br(),
+                ## header
+                shiny::div(
+                  class = "tableHeader",
+                  shiny::h5("Please insert site details below"),
+                  shiny::checkboxInput(
+                    "site_checkbox",
+                    label = "draw spatial boundaries for sites?",
+                    value = TRUE
+                  ),
+                  shiny::div(
+                    class = "tableBtnsContainer",
+                    shiny::conditionalPanel(
+                      condition = "input.site_checkbox < 0.5",
+                      shiny::div(
+                        class = "tableHeader",
+                        shiny::div(
+                          class = "tableBtns",
+                          shinyBS::tipify(
+                            title = "Insert row",
+                            shinyBS::bsButton(
+                              "site_data_add_row_btn",
+                              label = NULL,
+                              size = "small",
+                              icon = shiny::icon("plus")
+                            )
+                          ),
+                          shinyBS::tipify(
+                            title = "Remove row",
+                            shinyBS::bsButton(
+                              "site_data_remove_row_btn",
+                              label = NULL,
+                              size = "small",
+                              icon = shiny::icon("minus")
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                ),
+                ## panel for adding sites with spatial data
+                shiny::conditionalPanel(
+                  condition = "input.site_checkbox > 0.5",
+                  mapedit::editModUI("site_edit"),
+                  shiny::br(),
+                  shiny::div(
+                    rhandsontable::rHandsontableOutput(
+                      "site_spatial_data_widget"
+                    )
+                  )
+                ),
+                ## table
                 shiny::div(
                   rhandsontable::rHandsontableOutput("site_data_widget")
                 ),
+                ## alert
                 shiny::br(),
                 shiny::div(
-                  shinyBS::bsAlert(anchorId = "site_alert")
+                  shinyBS::bsAlert(anchorId = "site_data_alert")
                 )
               )
             )

@@ -25,7 +25,7 @@ NULL
 resize_table <- function(x, nrow = NULL) {
   # assert that arguments are valid
   assertthat::assert_that(
-    inherits(x, "data.frame"), nrow(x) >= 1, ncol(x) >= 1)
+    inherits(x, "data.frame"), nrow(x) >= 0, ncol(x) >= 1)
   if (is.null(nrow)) return(x)
   assertthat::assert_that(
     assertthat::is.count(nrow),
@@ -35,7 +35,7 @@ resize_table <- function(x, nrow = NULL) {
     ## add rows if needed
     x <- x[c(seq_len(nrow(x)), rep(NA_integer_, nrow - nrow(x))), ,
            drop = FALSE]
-    rownames(x) <- as.character(seq_len(nrow(x)))
+    rownames(x) <- NULL
   } else {
     ## remove rows if needed
     x <- x[seq_len(nrow), , drop = FALSE]

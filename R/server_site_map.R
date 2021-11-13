@@ -19,18 +19,27 @@ server_site_map <- quote({
     shiny::req(site_module()$finished)
     x <- site_module()$finished
     y <- site_module()$deleted
+    z <- values[["deleted_leaflet_id"]]
+
+    ## don't update data if map is hidden
+    if (!isTRUE(input$site_checkbox)) return()
 
     ## update column name
     names(x)[1] <- "leaflet_id"
     x$leaflet_id <- as.character(x$leaflet_id)
 
-    ## remove deleted if needed
+    ## delete geometries as needed
+    w <- z
     if (!is.null(y)) {
-      x <- x[!x[[1]] %in% y[[1]], , drop = FALSE]
+      w <- c(w, y[[1]])
+    }
+    if (length(w) > 0) {
+      x <- x[!x[[1]] %in% w, , drop = FALSE]
     }
 
     ## update data
     values[["site_geometry_data"]] <- x
+
   })
 
   # remove site geometry data when user remove data
@@ -39,10 +48,18 @@ server_site_map <- quote({
     shiny::req(site_module()$deleted)
     x <- values[["site_geometry_data"]]
     y <- site_module()$deleted
+    z <- values[["deleted_leaflet_id"]]
+
+    ## don't update data if map is hidden
+    if (!isTRUE(input$site_checkbox)) return()
 
     ## delete geometries as needed
+    w <- z
     if (!is.null(y)) {
-      x <- x[!x[[1]] %in% y[[1]], , drop = FALSE]
+      w <- c(w, y[[1]])
+    }
+    if ((length(w) > 0) && !is.null(y)) {
+      x <- x[!x[[1]] %in% w, , drop = FALSE]
       values[["site_geometry_data"]] <- x
     }
   })
@@ -56,6 +73,9 @@ server_site_map <- quote({
 
     ## exit if no changes needed
     if (identical(d$leaflet_id, s$leaflet_id)) return()
+
+    ## don't update data if map is hidden
+    if (!isTRUE(input$site_checkbox)) return()
 
     ## remove sites if needed
     if (is.null(s) || nrow(s) == 0) {
@@ -91,6 +111,7 @@ server_site_map <- quote({
     ## initialization
     shiny::req(input$site_data_widget)
     shiny::req(values[["site_geometry_data"]])
+
     ## update site data
     d <- values[["site_data"]]
     if (nrow(d) == 0) return() # manually exit if empty
@@ -100,6 +121,9 @@ server_site_map <- quote({
     d$id <- d2$id
     d$description <- d2$description
     values[["site_data"]] <- d
+
+    ## don't update geometry if map is hidden
+    if (!isTRUE(input$site_checkbox)) return()
 
     ## update site geometry data
     s <- values[["site_geometry_data"]]
