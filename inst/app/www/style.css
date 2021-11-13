@@ -61,6 +61,10 @@
   margin-bottom: 0px !important;
 }
 
+.label-light {
+  background-color: #f7f7f7 !important;
+  color: #000000 !important;
+}
 
 /* table components */
 .tableHeader{

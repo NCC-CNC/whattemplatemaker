@@ -19,13 +19,9 @@ server_glide <- quote({
     shiny::req(input$shinyglide_index_main_glide)
 
     # reset nav bar button colors
-    shinyjs::addClass(
-      selector = ".navbar .label-primary",
-      class = "label-default"
-    )
     shinyjs::removeClass(
-      selector = ".navbar .label-primary",
-      class = "label-primary"
+      selector = ".navbar .label-light",
+      class = "label-light"
     )
 
     # find name of button to update
@@ -38,7 +34,7 @@ server_glide <- quote({
     if (!is.na(screen_id)) {
       shinyjs::addClass(
         id = screen_id,
-        class = "label-primary"
+        class = "label-light"
       )
     }
   })

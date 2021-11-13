@@ -22,7 +22,7 @@ app_ui <- function(request) {
             class = "navbarPanel",
             htmltools::tags$span(
               id = "nav_intro_btn",
-              class = "label label-primary",
+              class = "label label-default label-light",
               "(1) Introduction"
             ),
             shiny::icon("chevron-right"),
