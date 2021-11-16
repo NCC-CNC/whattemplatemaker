@@ -21,7 +21,7 @@ NULL
 #'
 #' @return An invisible `TRUE` value.
 #'
-#' @export
+#' @noRd
 render_data_validation_alerts <- function(session, anchorId,
                                           alertIdPrefix,
                                           validation_results) {

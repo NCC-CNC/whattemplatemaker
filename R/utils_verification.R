@@ -9,7 +9,7 @@ NULL
 #'
 #' @return `character` value.
 #'
-#' @export
+#' @noRd
 extract_valid_names <- function(x) {
   if (length(x) == 0) return(c())
   if (all(is.na(x))) return(c())
@@ -25,7 +25,7 @@ extract_valid_names <- function(x) {
 #'
 #' @return `logical` value.
 #'
-#' @export
+#' @noRd
 n_valid_names <- function(x) {
   length(extract_valid_names(x))
 }
@@ -41,7 +41,7 @@ n_valid_names <- function(x) {
 #'
 #' @return `logical` value.
 #'
-#' @export
+#' @noRd
 valid_nchar <- function(x, length) {
   assertthat::assert_that(
     assertthat::is.count(length),

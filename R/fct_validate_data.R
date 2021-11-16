@@ -19,7 +19,7 @@ NULL
 #' \item{success}{A `logical` value indicating if the check was passed or not.}
 #' }
 #'
-#' @export
+#' @noRd
 validate_data <- function(x) {
   # assert valid argument
   assertthat::assert_that(

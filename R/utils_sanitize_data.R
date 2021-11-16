@@ -13,7 +13,7 @@ NULL
 #' At the moment, this just replaces
 #' zero-length character values with missing (`NA`) values.
 #'
-#' @export
+#' @noRd
 sanitize_data <- function(x) {
   assertthat::assert_that(inherits(x, "data.frame"))
   x <- dplyr::mutate_if(x, is.character, function(v) {

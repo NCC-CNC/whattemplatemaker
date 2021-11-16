@@ -7,7 +7,7 @@ NULL
 #'
 #' @return A [leaflet::leaflet()] object.
 #'
-#' @export
+#' @noRd
 site_leaflet_map <- function() {
   # create map
   map <-

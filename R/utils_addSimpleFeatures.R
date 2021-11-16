@@ -11,7 +11,7 @@ NULL
 #'
 #' @return An updated [leaflet::leaflet()] map object.
 #'
-#' @export
+#' @noRd
 addSimpleFeatures <- function(map, sf, ...) {
   # assert arguments are valid
   assertthat::assert_that(inherits(sf, "sf"))

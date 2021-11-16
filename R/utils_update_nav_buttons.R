@@ -9,7 +9,7 @@ NULL
 #'
 #' @return Invisible `TRUE`.
 #'
-#' @export
+#' @noRd
 update_nav_buttons <- function(x) {
   # assert arguments are valid
   assertthat::assert_that(
