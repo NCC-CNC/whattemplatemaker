@@ -909,14 +909,9 @@
     "reactlog": {
       "Package": "reactlog",
       "Version": "1.1.0",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteRepo": "reactlog",
-      "RemoteUsername": "rstudio",
-      "RemoteRef": "HEAD",
-      "RemoteSha": "8344895fdcd1a5a07f37dafad3d6f4b21c54c64a",
-      "Hash": "767ef949abe008d5bc4f4090163c9703"
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "5a30d3b8883107ae07c2137a33c000b2"
     },
     "rematch": {
       "Package": "rematch",
@@ -1290,9 +1285,9 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "NCC-CNC",
       "RemoteRepo": "whatdataio",
-      "RemoteRef": "master",
-      "RemoteSha": "56a103c0c44f2d6afe04e2ec2b9228ca884357ec",
-      "Hash": "8af2569e446dc585fe65c21aa51a5dff"
+      "RemoteRef": "v2",
+      "RemoteSha": "acacc639ce117ba2c76db1a6a209c51e926271d6",
+      "Hash": "c63ceabe53b225b302257855f314422c"
     },
     "whisker": {
       "Package": "whisker",

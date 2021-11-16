@@ -20,11 +20,52 @@ server_download_data <- quote({
     },
     contentType = "application/zip",
     content = function(path) {
+      ## generate site longitude and latitude data
+      if (isTRUE(input$site_checkbox > 0.5)) {
+        site_pts <- suppressWarnings(sf::as_Spatial(sf::st_centroid(
+          values[["site_geometry_data"]]
+        )))
+        site_lon <- site_pts@coords[, 1]
+        site_lat <- site_pts@coords[, 2]
+      } else {
+        site_lon <- rep("", length(values[["site_data"]]$id))
+        site_lat <- site_lon
+      }
+
+      ## process data
+      site_ids <- extract_valid_names(
+        values[["site_data"]]$id
+      )
+      site_descriptions <- extract_valid_names(
+        values[["site_data"]]$description
+      )
+      feature_ids <- extract_valid_names(
+        values[["feature_data"]]$id
+      )
+      feature_descriptions <- extract_valid_names(
+        values[["feature_data"]]$description
+      )
+      action_ids <- extract_valid_names(
+        values[["action_data"]]$id
+      )
+      action_descriptions <- extract_valid_names(
+        values[["action_data"]]$description
+      )
+
+      ## create workbook
       out_data <- whatdataio::create_template_workbook(
-        site_names = values[["site_data"]][[1]],
-        feature_names = values[["feature_data"]][[1]],
-        action_names = values[["action_data"]][[1]],
-        parameters = parameters)
+        site_ids = site_ids,
+        site_descriptions = site_descriptions,
+        feature_ids = feature_ids,
+        feature_descriptions = feature_descriptions,
+        action_ids = action_ids,
+        action_descriptions = action_descriptions,
+        parameters = parameters,
+        site_longitudes = site_lon,
+        site_latitudes = site_lat
+      )
+
+      ## save data to disk
       openxlsx::saveWorkbook(out_data, path, returnValue = FALSE)
   })
 

@@ -44,7 +44,7 @@ RoxygenNote: 7.1.1
 Language: en-US
 Remotes:
   r-lib/pkgdown,
-  NCC-CNC/whatdataio,
+  NCC-CNC/whatdataio@v2,
   NCC-CNC/leaflet.extras@draw_options
 Collate:
     'app_config.R'
