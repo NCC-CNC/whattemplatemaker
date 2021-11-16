@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read application configuration — get_golem_config • whattemplatemaker</title>
+<title>Render data validation alerts — render_data_validation_alerts • whattemplatemaker</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Read application configuration — get_golem_config" />
-<meta property="og:description" content="Read application configuration" />
+<meta property="og:title" content="Render data validation alerts — render_data_validation_alerts" />
+<meta property="og:description" content="This function displays alerts related to invalid user inputs." />
 
 
 
@@ -115,39 +115,52 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read application configuration</h1>
-    <small class="dont-index">Source: <a href='https://github.com/NCC-CNC/whattemplatemaker/blob/master/R/app_config.R'><code>R/app_config.R</code></a></small>
-    <div class="hidden name"><code>get_golem_config.Rd</code></div>
+    <h1>Render data validation alerts</h1>
+    <small class="dont-index">Source: <a href='https://github.com/NCC-CNC/whattemplatemaker/blob/master/R/fct_render_data_validation_alerts.R'><code>R/fct_render_data_validation_alerts.R</code></a></small>
+    <div class="hidden name"><code>render_data_validation_alerts.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Read application configuration</p>
+    <p>This function displays alerts related to invalid user inputs.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>get_golem_config</span><span class='op'>(</span>
-  <span class='va'>value</span>,
-  config <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GOLEM_CONFIG_ACTIVE"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"R_CONFIG_ACTIVE"</span>, <span class='st'>"default"</span><span class='op'>)</span><span class='op'>)</span>,
-  use_parent <span class='op'>=</span> <span class='cn'>TRUE</span>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>render_data_validation_alerts</span><span class='op'>(</span>
+  <span class='va'>session</span>,
+  <span class='va'>anchorId</span>,
+  <span class='va'>alertIdPrefix</span>,
+  <span class='va'>validation_results</span>
 <span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>value</th>
-      <td><p>Value to retrieve from the configuration file.</p></td>
+      <th>session</th>
+      <td><p>Shiny session.</p></td>
     </tr>
     <tr>
-      <th>config</th>
-      <td><p>GOLEM_CONFIG_ACTIVE value. If unset, R_CONFIG_ACTIVE.
-If unset, "default".</p></td>
+      <th>anchorId</th>
+      <td><p><code>character</code> Value indicating alert anchor identifier
+(used with <code><a href='https://rdrr.io/pkg/shinyBS/man/createAlert.html'>shinyBS::createAlert()</a></code> and <code><a href='https://rdrr.io/pkg/shinyBS/man/closeAlert.html'>shinyBS::closeAlert()</a></code>.</p></td>
     </tr>
     <tr>
-      <th>use_parent</th>
-      <td><p>Logical, scan the parent directory for configuration file.</p></td>
+      <th>alertIdPrefix</th>
+      <td><p><code>character</code> Value indicating prefixes for individual
+alerts.</p></td>
+    </tr>
+    <tr>
+      <th>validation_results</th>
+      <td><p><code>list</code> Object with validation results
+(produced using <code><a href='validate_data.html'>validate_data()</a></code>).</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An invisible <code>TRUE</code> value.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This function is used for the side-effect of creating alerts.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

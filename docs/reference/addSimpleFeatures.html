@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Read application configuration — get_golem_config • whattemplatemaker</title>
+<title>Add Simple Features — addSimpleFeatures • whattemplatemaker</title>
 
 
 <!-- jquery -->
@@ -41,8 +41,8 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Read application configuration — get_golem_config" />
-<meta property="og:description" content="Read application configuration" />
+<meta property="og:title" content="Add Simple Features — addSimpleFeatures" />
+<meta property="og:description" content="Add simple features data to a leaflet::leaflet() map." />
 
 
 
@@ -115,39 +115,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Read application configuration</h1>
-    <small class="dont-index">Source: <a href='https://github.com/NCC-CNC/whattemplatemaker/blob/master/R/app_config.R'><code>R/app_config.R</code></a></small>
-    <div class="hidden name"><code>get_golem_config.Rd</code></div>
+    <h1>Add Simple Features</h1>
+    <small class="dont-index">Source: <a href='https://github.com/NCC-CNC/whattemplatemaker/blob/master/R/utils_addSimpleFeatures.R'><code>R/utils_addSimpleFeatures.R</code></a></small>
+    <div class="hidden name"><code>addSimpleFeatures.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Read application configuration</p>
+    <p>Add simple features data to a <code><a href='https://rdrr.io/pkg/leaflet/man/leaflet.html'>leaflet::leaflet()</a></code> map.</p>
     </div>
 
-    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>get_golem_config</span><span class='op'>(</span>
-  <span class='va'>value</span>,
-  config <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"GOLEM_CONFIG_ACTIVE"</span>, <span class='fu'><a href='https://rdrr.io/r/base/Sys.getenv.html'>Sys.getenv</a></span><span class='op'>(</span><span class='st'>"R_CONFIG_ACTIVE"</span>, <span class='st'>"default"</span><span class='op'>)</span><span class='op'>)</span>,
-  use_parent <span class='op'>=</span> <span class='cn'>TRUE</span>
-<span class='op'>)</span></code></pre></div>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>addSimpleFeatures</span><span class='op'>(</span><span class='va'>map</span>, <span class='va'>sf</span>, <span class='va'>...</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>value</th>
-      <td><p>Value to retrieve from the configuration file.</p></td>
+      <th>map</th>
+      <td><p><code><a href='https://rdrr.io/pkg/leaflet/man/leaflet.html'>leaflet::leaflet()</a></code> Map object.</p></td>
     </tr>
     <tr>
-      <th>config</th>
-      <td><p>GOLEM_CONFIG_ACTIVE value. If unset, R_CONFIG_ACTIVE.
-If unset, "default".</p></td>
-    </tr>
-    <tr>
-      <th>use_parent</th>
-      <td><p>Logical, scan the parent directory for configuration file.</p></td>
+      <th>sf</th>
+      <td><p><code><a href='https://r-spatial.github.io/sf/reference/sf.html'>sf::st_sf()</a></code> object.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An updated <code><a href='https://rdrr.io/pkg/leaflet/man/leaflet.html'>leaflet::leaflet()</a></code> map object.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
