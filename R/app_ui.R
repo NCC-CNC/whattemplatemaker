@@ -60,7 +60,6 @@ app_ui <- function(request) {
         next_label = shiny::icon("arrow-right", class = "fa-3x"),
         previous_label = shiny::icon("arrow-left", class = "fa-3x"),
         keyboard = FALSE,
-        swipe = FALSE,
         custom_controls = htmltools::tags$div(
           class = "glideControlContainer",
           htmltools::tags$div(
