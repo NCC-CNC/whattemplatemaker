@@ -2,6 +2,8 @@
 NULL
 
 #' @import shinyBS
+#' @import sf
+#' @importFrom dplyr %>%
 NULL
 
 #' whattemplatemaker: Interactive data template application for the What To Do application
@@ -25,3 +27,9 @@ NULL
 #' run_app()
 #' }
 NULL
+
+# define global variables to pass package checks
+## these variables are used in lazy evaluation or the shiny application
+utils::globalVariables(
+  c("example_action_data")
+)
