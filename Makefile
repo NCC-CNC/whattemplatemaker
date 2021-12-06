@@ -17,10 +17,6 @@ all: man readme test check spellcheck
 man:
 	R --slave -e "devtools::document()"
 
-## simulate data
-data:
-	R --slave -e "source('inst/scripts/simulate-data.R')"
-
 ## reubild readme
 readme:
 	R --slave -e "rmarkdown::render('README.Rmd')"
