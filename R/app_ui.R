@@ -245,7 +245,17 @@ app_ui <- function(request) {
               shinyWidgets::pickerInput(
                 inputId = "action_id_input",
                 label = NULL,
-                choices = example_action_data$id,
+                choices =
+                setNames(
+                  lapply(
+                    sort(unique(example_action_data$ecosystem)),
+                    function(x) {
+                      i <- example_action_data$ecosystem == x
+                      sort(example_action_data$id[i])
+                    }
+                  ),
+                  sort(unique(example_action_data$ecosystem))
+                ),
                 multiple = TRUE,
                 options = list(
                   title = "Select suggested actions...",
