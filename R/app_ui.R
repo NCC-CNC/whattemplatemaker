@@ -246,7 +246,7 @@ app_ui <- function(request) {
                 inputId = "action_id_input",
                 label = NULL,
                 choices =
-                setNames(
+                stats::setNames(
                   lapply(
                     sort(unique(example_action_data$ecosystem)),
                     function(x) {
