@@ -17,10 +17,6 @@ all: man readme test check spellcheck
 man:
 	R --slave -e "devtools::document()"
 
-## simulate data
-data:
-	R --slave -e "source('inst/scripts/simulate-data.R')"
-
 ## reubild readme
 readme:
 	R --slave -e "rmarkdown::render('README.Rmd')"
@@ -96,8 +92,13 @@ reset:
 	docker rmi -f $(docker images -aq)
 
 # renv commands
+## update deps
+updatedeps:
+	R --slave -e "remotes::install_github('NCC-CNC/whatdataio@v2', force = TRUE, upgrade = 'never')"
+	R --slave -e "renv::snapshot()"
+
 ## snapshot R package dependencies
 snapshot:
 	R -e "renv::snapshot()"
 
-.PHONY: clean data readme test check install man spellcheck examples site quicksite snapshot deploy demo demo-kill image debug snapshot
+.PHONY: clean data readme test check install man spellcheck examples site quicksite snapshot deploy demo demo-kill image debug snapshot updatedeps

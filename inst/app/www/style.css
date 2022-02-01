@@ -1,3 +1,4 @@
+/* general containers */
 .divCenter {
   display: flex;
   justify-content: center;
@@ -5,4 +6,114 @@
 
 .divShrink{
   display:inline-block;
+}
+
+/* panels */
+.navbarPanel{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #adb5bd;
+  border-radius: 0 !important;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  column-gap: 10px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.introPanel{
+  margin: auto;
+  padding-top: 20px;
+  width: 30vw;
+  min-width: 400px;
+}
+
+.mainPanel{
+  padding-right: 5%;
+  /* max-width: 700px; */
+}
+
+.exportPanel{
+  margin: auto;
+  padding-top: 20px;
+  width: 30vw;
+  min-width: 400px;
+}
+
+.sidebarPanel{
+  height: calc(100vh - 70px);
+}
+
+.sidebarPanel .well form{
+  align-items: stretch;
+}
+
+/* navbar */
+.navbar{
+  cursor: default;
+  margin-bottom: 5px !important;
+}
+
+.navbar h3{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.label-light {
+  background-color: #f7f7f7 !important;
+  color: #000000 !important;
+}
+
+/* table components */
+.tableHeader{
+  display: flex;
+  height: 35px;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tableHeader .checkbox{
+  margin-bottom: 0 !important;
+}
+
+.tableHeader .form-group.shiny-input-container{
+  margin-bottom: 10px !important;
+}
+
+.tableBtnsContainer{
+  min-width: 70px;
+}
+
+.handsontable {
+  overflow: visible;
+}
+
+.handsontable .wtHolder{
+  overflow-x: hidden;
+  /* width: 100% !important; */
+}
+
+/* export buttons */
+.exportButtons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+/* glide */
+#main_glide{
+  margin-left: 10px;
+}
+
+.glideControlContainer {
+  display: flex;
+  padding-right: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  column-gap: 5px;
 }

@@ -7,6 +7,19 @@ default:
   # number of default rows in the tables
   n_data_rows: 5
 
+  # maximum number of characters in site, feature, and action ids
+  maximum_id_length: 20
+
+  # maximum number of characters in site, feature, and action descriptions
+  maximum_description_length: 100
+
+  # table width
+  table_width: "100%"
+
+  # site polygon colors
+  site_fill_color: "#ffff33"
+  site_color: "#ffff33"
+
 production:
   app_prod: yes
 

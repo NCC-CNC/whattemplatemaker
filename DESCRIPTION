@@ -25,16 +25,22 @@ Imports:
     shinyjs (>= 2.0.0),
     RcppTOML (>= 0.1.7),
     htmltools (>= 0.5.1.1),
+    dplyr (>= 1.0.7),
+    geojsonsf (>= 2.0.1),
+    leaflet (>= 2.0.4.1),
+    mapedit (>= 0.6.0),
+    shinyglide (>= 0.1.3),
+    shinyWidgets (>= 0.6.2),
     whatdataio,
 Suggests:
     testthat (>= 2.0.1),
     knitr (>= 1.2.0),
     roxygen2 (>= 6.1.1),
     rmarkdown (>= 1.10),
-    sf (>= 0.9-8),
 Depends:
     R (>= 4.0.0),
     shinyBS (>= 0.6.1),
+    sf (>= 0.9-8),
 License: GPL-3
 Encoding: UTF-8
 URL: https://NCC-CNC.github.io/whattemplatemaker/
@@ -44,17 +50,30 @@ RoxygenNote: 7.1.1
 Language: en-US
 Remotes:
   r-lib/pkgdown,
-  NCC-CNC/whatdataio
+  NCC-CNC/whatdataio@v2,
+  NCC-CNC/leaflet.extras@draw_options
 Collate:
     'app_config.R'
     'app_global.R'
     'app_server.R'
     'app_ui.R'
     'internal.R'
+    'fct_render_data_validation_alerts.R'
+    'fct_validate_data.R'
     'package.R'
     'run_app.R'
-    'server_display_information.R'
     'server_download_data.R'
+    'server_example_action_inputs.R'
+    'server_glide.R'
     'server_initialize_app.R'
+    'server_input_validation.R'
+    'server_observe_data.R'
     'server_resize_buttons.R'
+    'server_site_checkbox.R'
+    'server_site_map.R'
+    'ui_site_leaflet_map.R'
+    'utils_addSimpleFeatures.R'
     'utils_resize_table.R'
+    'utils_sanitize_data.R'
+    'utils_update_nav_buttons.R'
+    'utils_verification.R'

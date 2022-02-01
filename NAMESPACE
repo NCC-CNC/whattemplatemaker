@@ -2,8 +2,10 @@
 
 export(get_golem_config)
 export(run_app)
+import(sf)
 import(shiny)
 import(shinyBS)
+importFrom(dplyr,"%>%")
 importFrom(golem,activate_js)
 importFrom(golem,add_resource_path)
 importFrom(golem,bundle_resources)

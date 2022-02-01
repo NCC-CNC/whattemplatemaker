@@ -13,46 +13,52 @@
 #' @noRd
 server_resize_buttons <- quote({
 
-  # resize site data
-  shiny::observeEvent(input$resize_site_btn, {
-    new_nrow <- as.numeric(input$resize_site_input)
-    values[["site_data"]] <- resize_table(values[["site_data"]], new_nrow)
-    output$site_data_widget <- rhandsontable::renderRHandsontable({
-      rhandsontable::rhandsontable(
-        values[["site_data"]],
-        useTypes = TRUE,
-        width = 200,
-        stretchH = "all"
-      )
-    })
+  # site data
+  ## add row
+  shiny::observeEvent(input$site_data_add_row_btn, {
+    values[["site_data"]] <- resize_table(
+      values[["site_data"]],
+      nrow(values[["site_data"]]) + 1
+    )
+  })
+  ## remove row
+  shiny::observeEvent(input$site_data_remove_row_btn, {
+    values[["site_data"]] <- resize_table(
+      values[["site_data"]],
+      nrow(values[["site_data"]]) - 1
+    )
   })
 
-  # resize action data
-  shiny::observeEvent(input$resize_action_btn, {
-    new_nrow <- as.numeric(input$resize_action_input)
-    values[["action_data"]] <- resize_table(values[["action_data"]], new_nrow)
-    output$action_data_widget <- rhandsontable::renderRHandsontable({
-      rhandsontable::rhandsontable(
-        values[["action_data"]],
-        useTypes = TRUE,
-         width = 200,
-         stretchH = "all"
-       )
-    })
+  # feature data
+  ## add row
+  shiny::observeEvent(input$feature_data_add_row_btn, {
+    values[["feature_data"]] <- resize_table(
+      values[["feature_data"]],
+      nrow(values[["feature_data"]]) + 1
+    )
+  })
+  ## remove row
+  shiny::observeEvent(input$feature_data_remove_row_btn, {
+    values[["feature_data"]] <- resize_table(
+      values[["feature_data"]],
+      nrow(values[["feature_data"]]) - 1
+    )
   })
 
-  # resize feature data
-  shiny::observeEvent(input$resize_feature_btn, {
-    new_nrow <- as.numeric(input$resize_feature_input)
-    values[["feature_data"]] <- resize_table(values[["feature_data"]], new_nrow)
-    output$feature_data_widget <- rhandsontable::renderRHandsontable({
-      rhandsontable::rhandsontable(
-        values[["feature_data"]],
-        useTypes = TRUE,
-        width = 200,
-        stretchH = "all"
-       )
-    })
+  # action data
+  ## add row
+  shiny::observeEvent(input$action_data_add_row_btn, {
+    values[["action_data"]] <- resize_table(
+      values[["action_data"]],
+      nrow(values[["action_data"]]) + 1
+    )
+  })
+  ## remove row
+  shiny::observeEvent(input$action_data_remove_row_btn, {
+    values[["action_data"]] <- resize_table(
+      values[["action_data"]],
+      nrow(values[["action_data"]]) - 1
+    )
   })
 
 })
