@@ -31,7 +31,7 @@ for it to work.
 <table>
 <tr>
 <td>
-<img class = "screenshot" src="man/figures/screenshot.png" align="center" width="100%"/>
+<img class="screenshot" src="man/figures/screenshot.png" align="center" width="100%"/>
 </td>
 </tr>
 </table>
