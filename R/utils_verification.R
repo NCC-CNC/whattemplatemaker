@@ -49,5 +49,5 @@ valid_nchar <- function(x, length) {
   )
   x <- extract_valid_names(x)
   if (length(x) == 0) return(TRUE)
-  isTRUE(max(nchar(x)) < length)
+  isTRUE(max(nchar(x)) <= length)
 }
