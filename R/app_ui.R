@@ -167,7 +167,7 @@ app_ui <- function(request) {
                 ## alert
                 shiny::br(),
                 shiny::div(
-                  shinyBS::bsAlert(anchorId = "site_data_alert")
+                  shinyBS::bsAlert(anchorId = "site_alert")
                 )
               )
             )
