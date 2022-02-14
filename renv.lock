@@ -378,6 +378,13 @@
       "Repository": "CRAN",
       "Hash": "77bd60a6157420d4ffa93b27cf6a58b8"
     },
+    "fontawesome": {
+      "Package": "fontawesome",
+      "Version": "0.2.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "55624ed409e46c5f358b2c060be87f67"
+    },
     "foreach": {
       "Package": "foreach",
       "Version": "1.5.1",
@@ -1283,11 +1290,20 @@
       "Source": "GitHub",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "NCC-CNC",
       "RemoteRepo": "whatdataio",
-      "RemoteRef": "master",
-      "RemoteSha": "0484f527eebccc010bf5dde276f241d4a6e78eb6",
-      "Hash": "c4a43a68169a113afa91cd0c2678d51c"
+      "RemoteUsername": "NCC-CNC",
+      "RemoteRef": "HEAD",
+      "RemoteSha": "e56bb3c44ae033d2400e99c30948b85619abaffd",
+      "Hash": "61fce186772e5532397689535112c785"
+    },
+    "whattemplatemaker": {
+      "Package": "whattemplatemaker",
+      "Version": "1.0.0",
+      "Source": "Local",
+      "Remotes": "r-lib/pkgdown, NCC-CNC/whatdataio,\nNCC-CNC/leaflet.extras@draw_options",
+      "RemoteType": "local",
+      "RemoteUrl": "/home/jeff/GitHub/whattemplatemaker",
+      "Hash": "33047af93110b92ef41e68d48f9bb4ee"
     },
     "whisker": {
       "Package": "whisker",
