@@ -367,9 +367,6 @@ golem_add_external_resources <- function() {
       app_title = "What Template Maker"
     ),
 
-    ## favicon
-    golem::favicon(),
-
     ## dependencies
     shinyjs::useShinyjs()
   )
