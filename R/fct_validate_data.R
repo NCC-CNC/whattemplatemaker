@@ -50,9 +50,10 @@ validate_data <- function(x) {
     ## at least one id or description
     list(
       id = "row_min",
-      title = "Oops",
+      title = "Please fill in the table",
       details = paste(
-        "Please provide details for at least one row in the table."
+        "The table must have at least one row filled in to proceed to the",
+        "next section."
       ),
       success = isTRUE(length(curr_id) >= 1) || isTRUE(length(curr_desc) >= 1)
     ),
