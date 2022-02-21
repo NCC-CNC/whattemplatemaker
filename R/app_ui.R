@@ -98,10 +98,10 @@ app_ui <- function(request) {
               width = 4,
               class = "sidebarPanel",
               shiny::h3("Site details"),
-              shiny::helpText("Enter in the names of each site. These can include places that you are already managing for conservation. They can also include new places that you might be considering to acquire for future conservation efforts. For example, these values could correspond to the names of places (e.g. \"Vulture Valley\"), database identifiers (e.g. \"12345A\"), or a combination of place names and identifiers (e.g. \"Vulture Valley (#12345A)\"). It is important that each site has a distinctly different name."),
-              shiny::br(),
-              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\")."),
-              shiny::br(),
+              shiny::helpText("Please enter details for each site. Specifically, sites can include places (or areas) that you are already managing for conservation. They can also include new places (or areas) that you might be considering to acquire for future conservation efforts. For each site, please input a unique identifier (\"id\" column) and a description ( \"description\" column)."),
+              shiny::helpText("The identifiers should provide a short, distinct, memorable name for each site that allows you to easily distinguish between the different sites. For example, they could be specified using short names (e.g., \"Vulture Valley\"), database codes (e.g., \"12345A\"), or a combination of short names and database codes (e.g., \"Vulture Valley (#12345A)\")."),
+              shiny::helpText("The descriptions are used to record additional information on each site. Ideally, this information should provide context to help understand each site could be important for conservation management. For instance, the description could discuss presence of iconic taxa, or provisioning of ecosystem services."),
+              shiny::helpText("To add a new site, please click on the draw button (with the", htmltools::tags$img(src = "www/polygon.svg", style = "display:inline;height:0.8em"), "icon), sketch out the spatial boundary for the site, and then fill in the table with an identifier and description for the site. If you do not wish to draw the site boundaries, you can click the checkbox above the map and enter identifiers and descriptions for the sites directly."),
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
             ## main content
@@ -182,10 +182,10 @@ app_ui <- function(request) {
               width = 4,
               class = "sidebarPanel",
               shiny::h3("Feature details"),
-              shiny::helpText("Enter in the names of each feature. These correspond to different biodiversity elements (e.g. populations, species, habitat types, forest cover) for which you wish to improve through effective management (e.g. increase population size, increase amount of available habitat). They can also include ecosystem services (e.g. carbon sequestration, human benefits from nature) that you wish to promote (e.g. increase amount of carbon that can be sequestered, increase amount of space for recreational activities). For example, these values could correspond to species names (e.g. \"Caribou\") or vegetation types (e.g. \"Alvar\")."),
-              shiny::br(),
-              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\")."),
-              shiny::br(),
+              shiny::helpText("Please enter details of each feature. These correspond to different biodiversity elements (e.g., populations, species, habitat types, forest cover) for which you wish to improve through effective management (e.g., increase population size, increase amount of available habitat). They can also include ecosystem services (e.g., carbon sequestration, human benefits from nature) that you wish to promote (e.g., increase amount of carbon that can be sequestered, increase amount of space for recreational activities). For each feature, please input a unique identifier (\"id\" column) and a description ( \"description\" column)."),
+              shiny::helpText("The identifiers should provide a short, distinct, memorable name for each feature that allows you to easily distinguish between the different feature. For example, they could be specified using common names (e.g., \"Caribou\", \"Intact alvar\"), scientific names (e.g., \"Rangifer tarandus\"), database codes (e.g., \"12345A\"), or a combination."),
+              shiny::helpText("The descriptions are used to record additional information about each feature. Ideally, this information should provide context to help understand why the feature is important for conservation management. For instance, the description could describe threat status (e.g., recorded as Critically Endangered on the IUCN Red List), protection by legislation (e.g., protected by federal-level environmental legislation), or the benefits it provides to humans (e.g., provides carbon sequestration). This information can also describe the consequence data that will be entered after downloading the template. For example, this information can be used to make a note that the data should denote record the presence/absence, population size (number of individuals), or amount of suitable habitat (hectares of land) for a particular species."),
+              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g., \"Insert row above\" or \"Remove row\")."),
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
             ## main content
@@ -238,33 +238,11 @@ app_ui <- function(request) {
               width = 4,
               class = "sidebarPanel",
               shiny::h3("Actions details"),
-              shiny::helpText("Enter in the names of management actions. These correspond to activities that are designed to help conserve the features. They can include actions that are currently being implemented, and also activities that could be implemented in the future."),
-              shiny::br(),
-              shiny::helpText("To help you get started with this, we have provided some example management actions. Please have a look through the example actions and select that you think might be relevant for managing the features inside your sites. In addition to these examples, please enter into the table any other actions that might also be relevant."),
-              shiny::br(),
-              shinyWidgets::pickerInput(
-                inputId = "action_id_input",
-                label = NULL,
-                choices =
-                stats::setNames(
-                  lapply(
-                    sort(unique(example_action_data$ecosystem)),
-                    function(x) {
-                      i <- example_action_data$ecosystem == x
-                      sort(example_action_data$id[i])
-                    }
-                  ),
-                  sort(unique(example_action_data$ecosystem))
-                ),
-                multiple = TRUE,
-                options = list(
-                  title = "Select suggested actions...",
-                  `selected-text-format` = "count > 3"
-                )
-              ),
-              shiny::br(),
-              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g. \"Insert row above\" or \"Remove row\")."),
-              shiny::br(),
+              shiny::helpText("Please enter details for each management action. These correspond to conservation activities that can be implemented in sites to help the features. They can include actions that are currently being implemented within particular sites, and also activities that could be implemented in the future. To obtain useful recommendations, it is important that each action has a level of specificity that reflects real-world implementation. For example, if a site has multiple different invasive species and each invasive species requires different management actions (e.g., some may requiring traps, and others may require shooting), then it would be important to have separate actions for each invasive species (e.g., \"trap rats\" and \"shoot goats\"). For each action, please input a unique identifier (\"id\" column) and a description ( \"description\" column)."),
+              shiny::helpText("The identifiers should provide a short, distinct, memorable name for each action that allows you to easily distinguish between the different action. For example, they could be specified using short names (e.g., \"plant trees\", \"controlled burns\", \"trap rats\", \"shoot goats\"), database codes (e.g., \"12345A\"), or a combination of them."),
+              shiny::helpText("The descriptions are used to record additional information about each action. Ideally, this information should provide context to help understand why the action might be an useful for conservation management. For instance, the descriptions could detail how the action has previously been implemented in the study area, which features are most likely to benefit from the action, and any feasibility issues with implementing the action."),
+              shiny::helpText("To help you get started with this, we have provided some example management actions that can be added using the drop-down menu."),
+              shiny::helpText("If you need to add or remove rows, you can click on the buttons above the table. You can also right click on a row and select the relevant option (e.g., \"Insert row above\" or \"Remove row\")."),
               shiny::helpText("After you have finished entering in these details, please click the blue arrow in the top right corner of the screen.")
             ),
             ## main content
@@ -275,6 +253,26 @@ app_ui <- function(request) {
                 shiny::div(
                   class = "tableHeader",
                   shiny::h5("Please insert action details in the table below"),
+                  shinyWidgets::pickerInput(
+                    inputId = "action_id_input",
+                    label = NULL,
+                    choices =
+                    stats::setNames(
+                      lapply(
+                        sort(unique(example_action_data$ecosystem)),
+                        function(x) {
+                          i <- example_action_data$ecosystem == x
+                          sort(example_action_data$id[i])
+                        }
+                      ),
+                      sort(unique(example_action_data$ecosystem))
+                    ),
+                    multiple = TRUE,
+                    options = list(
+                      title = "Add suggested actions...",
+                      `selected-text-format` = "count > 3"
+                    )
+                  ),
                   shiny::div(
                     class = "tableBtns",
                     shinyBS::tipify(
