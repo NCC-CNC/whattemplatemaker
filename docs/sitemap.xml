@@ -13,10 +13,16 @@
     <loc>/news/index.html</loc>
   </url>
   <url>
+    <loc>/reference/add_row_button.html</loc>
+  </url>
+  <url>
     <loc>/reference/get_golem_config.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/remove_row_button.html</loc>
   </url>
   <url>
     <loc>/reference/run_app.html</loc>

@@ -15,12 +15,6 @@ server_observe_data <- quote({
 
   # logic for updating user interface when site data updated internally
   shiny::observeEvent(values[["site_data"]], {
-    ## disable button to remove rows if only has 1 row
-    shinyjs::toggleState(
-      id = "site_data_remove_row_btn",
-      condition = nrow(values[["site_data"]]) > 1
-    )
-
     ## update table
     output$site_data_widget <- rhandsontable::renderRHandsontable({
       rhandsontable::rhandsontable(
@@ -31,16 +25,21 @@ server_observe_data <- quote({
         overflow = "hidden"
       )
     })
+
+    ## reset row buttons
+    shinyFeedback::resetLoadingButton("site_data_add_row_btn")
+    shinyFeedback::resetLoadingButton("site_data_remove_row_btn")
+
+    ## disable button to remove rows if only has 1 row
+    shinyjs::toggleState(
+      id = "site_data_remove_row_btn",
+      condition = nrow(values[["site_data"]]) > 1
+    )
+
   })
 
   # logic for updating user interface when feature data updated internally
   shiny::observeEvent(values[["feature_data"]], {
-    ## disable button to remove rows if only has 1 row
-    shinyjs::toggleState(
-      id = "feature_data_remove_row_btn",
-      condition = nrow(values[["feature_data"]]) > 1
-    )
-
     ## update table
     output$feature_data_widget <- rhandsontable::renderRHandsontable({
       rhandsontable::rhandsontable(
@@ -51,6 +50,17 @@ server_observe_data <- quote({
         overflow = "hidden"
       )
     })
+
+    ## reset row buttons
+    shinyFeedback::resetLoadingButton("feature_data_add_row_btn")
+    shinyFeedback::resetLoadingButton("feature_data_remove_row_btn")
+
+    ## disable button to remove rows if only has 1 row
+    shinyjs::toggleState(
+      id = "feature_data_remove_row_btn",
+      condition = nrow(values[["feature_data"]]) > 1
+    )
+
   })
 
   # store feature data when table widget updated
@@ -64,12 +74,6 @@ server_observe_data <- quote({
 
   # logic for updating user interface when action data updated internally
   shiny::observeEvent(values[["action_data"]], {
-    ## disable button to remove rows if only has 1 row
-    shinyjs::toggleState(
-      id = "action_data_remove_row_btn",
-      condition = nrow(values[["action_data"]]) > 1
-    )
-
     ## update table
     output$action_data_widget <- rhandsontable::renderRHandsontable({
       rhandsontable::rhandsontable(
@@ -80,8 +84,18 @@ server_observe_data <- quote({
         overflow = "hidden"
       )
     })
-  })
 
+    ## reset row buttons
+    shinyFeedback::resetLoadingButton("action_data_add_row_btn")
+    shinyFeedback::resetLoadingButton("action_data_remove_row_btn")
+
+    ## disable button to remove rows if only has 1 row
+    shinyjs::toggleState(
+      id = "action_data_remove_row_btn",
+      condition = nrow(values[["action_data"]]) > 1
+    )
+
+  })
 
   # store action data when table widget updated
   shiny::observeEvent(input$action_data_widget, {

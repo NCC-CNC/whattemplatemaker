@@ -126,24 +126,8 @@ app_ui <- function(request) {
                         class = "tableHeader",
                         shiny::div(
                           class = "tableBtns",
-                          shinyBS::tipify(
-                            title = "Insert row",
-                            shinyBS::bsButton(
-                              "site_data_add_row_btn",
-                              label = NULL,
-                              size = "small",
-                              icon = shiny::icon("plus")
-                            )
-                          ),
-                          shinyBS::tipify(
-                            title = "Remove row",
-                            shinyBS::bsButton(
-                              "site_data_remove_row_btn",
-                              label = NULL,
-                              size = "small",
-                              icon = shiny::icon("minus")
-                            )
-                          )
+                          add_row_button("site_data_add_row_btn"),
+                          remove_row_button("site_data_remove_row_btn")
                         )
                       )
                     )
@@ -198,24 +182,8 @@ app_ui <- function(request) {
                   shiny::h5("Please insert feature details in the table below"),
                   shiny::div(
                     class = "tableBtns",
-                    shinyBS::tipify(
-                      title = "Insert row",
-                      shinyBS::bsButton(
-                        "feature_data_add_row_btn",
-                        label = NULL,
-                        size = "small",
-                        icon = shiny::icon("plus")
-                      )
-                    ),
-                    shinyBS::tipify(
-                      title = "Remove row",
-                      shinyBS::bsButton(
-                        "feature_data_remove_row_btn",
-                        label = NULL,
-                        size = "small",
-                        icon = shiny::icon("minus")
-                      )
-                    )
+                    add_row_button("feature_data_add_row_btn"),
+                    remove_row_button("feature_data_remove_row_btn")
                   )
                 ),
                 shiny::div(
@@ -275,24 +243,8 @@ app_ui <- function(request) {
                   ),
                   shiny::div(
                     class = "tableBtns",
-                    shinyBS::tipify(
-                      title = "Insert row",
-                      shinyBS::bsButton(
-                        "action_data_add_row_btn",
-                        label = NULL,
-                        size = "small",
-                        icon = shiny::icon("plus")
-                      )
-                    ),
-                    shinyBS::tipify(
-                      title = "Remove row",
-                      shinyBS::bsButton(
-                        "action_data_remove_row_btn",
-                        label = NULL,
-                        size = "small",
-                        icon = shiny::icon("minus")
-                      )
-                    )
+                    add_row_button("action_data_add_row_btn"),
+                    remove_row_button("action_data_remove_row_btn")
                   )
                 ),
                 shiny::div(
