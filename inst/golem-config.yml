@@ -8,7 +8,7 @@ default:
   n_data_rows: 5
 
   # maximum number of characters in site, feature, and action ids
-  maximum_id_length: 20
+  maximum_id_length: 17
 
   # maximum number of characters in site, feature, and action descriptions
   maximum_description_length: 100
