@@ -23,6 +23,18 @@ server_observe_data <- quote({
         width = whattemplatemaker::get_golem_config("table_width"),
         stretchH = "all",
         overflow = "hidden"
+      ) %>%
+      add_hot_col_nchar_validator(
+        col = "id",
+        allowInvalid = FALSE,
+        nchar = whattemplatemaker::get_golem_config("maximum_id_length")
+      ) %>%
+      add_hot_col_nchar_validator(
+        col = "description",
+        allowInvalid = FALSE,
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_description_length"
+        )
       )
     })
 
@@ -48,6 +60,18 @@ server_observe_data <- quote({
         width = whattemplatemaker::get_golem_config("table_width"),
         stretchH = "all",
         overflow = "hidden"
+      ) %>%
+      add_hot_col_nchar_validator(
+        col = "id",
+        allowInvalid = FALSE,
+        nchar = whattemplatemaker::get_golem_config("maximum_id_length")
+      ) %>%
+      add_hot_col_nchar_validator(
+        col = "description",
+        allowInvalid = FALSE,
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_description_length"
+        )
       )
     })
 
@@ -82,6 +106,18 @@ server_observe_data <- quote({
         width = whattemplatemaker::get_golem_config("table_width"),
         stretchH = "all",
         overflow = "hidden"
+      ) %>%
+      add_hot_col_nchar_validator(
+        col = "id",
+        allowInvalid = FALSE,
+        nchar = whattemplatemaker::get_golem_config("maximum_id_length")
+      ) %>%
+      add_hot_col_nchar_validator(
+        col = "description",
+        allowInvalid = FALSE,
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_description_length"
+        )
       )
     })
 

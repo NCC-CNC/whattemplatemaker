@@ -75,6 +75,7 @@ Collate:
     'ui_site_leaflet_map.R'
     'ui_table_buttons.R'
     'utils_addSimpleFeatures.R'
+    'utils_add_hot_col_nchar_validator.R'
     'utils_resize_table.R'
     'utils_sanitize_data.R'
     'utils_update_nav_buttons.R'
