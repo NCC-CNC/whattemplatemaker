@@ -82,6 +82,17 @@ validate_data <- function(x) {
       )
     ),
 
+    ## invalid characters for Excel spreadsheet
+    list(
+      id = "id_excel_char",
+      title = "Oops",
+      details = paste0(
+        "Each value in the \"id\" must not contain any of the following ",
+        "characters: \"\\\", \"/\", \"*\", \"?\", \":\", \"[\", or \"]\"."
+      ),
+      success = valid_spreadsheet_characters(x$id)
+    ),
+
     # check description column
     ## character limit
     list(

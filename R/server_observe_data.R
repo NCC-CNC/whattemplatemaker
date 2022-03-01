@@ -24,10 +24,24 @@ server_observe_data <- quote({
         stretchH = "all",
         overflow = "hidden"
       ) %>%
+      add_hot_col_invalid_id_renderer(
+        col = "id",
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_id_length"
+        )
+      ) %>%
+      add_hot_col_invalid_desc_renderer(
+        col = "description",
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_description_length"
+        )
+      ) %>%
       add_hot_col_nchar_validator(
         col = "id",
         allowInvalid = FALSE,
-        nchar = whattemplatemaker::get_golem_config("maximum_id_length")
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_id_length"
+        )
       ) %>%
       add_hot_col_nchar_validator(
         col = "description",
@@ -61,10 +75,24 @@ server_observe_data <- quote({
         stretchH = "all",
         overflow = "hidden"
       ) %>%
+      add_hot_col_invalid_id_renderer(
+        col = "id",
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_id_length"
+        )
+      ) %>%
+      add_hot_col_invalid_desc_renderer(
+        col = "description",
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_description_length"
+        )
+      ) %>%
       add_hot_col_nchar_validator(
         col = "id",
         allowInvalid = FALSE,
-        nchar = whattemplatemaker::get_golem_config("maximum_id_length")
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_id_length"
+        )
       ) %>%
       add_hot_col_nchar_validator(
         col = "description",
@@ -107,10 +135,24 @@ server_observe_data <- quote({
         stretchH = "all",
         overflow = "hidden"
       ) %>%
+      add_hot_col_invalid_id_renderer(
+        col = "id",
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_id_length"
+        )
+      ) %>%
+      add_hot_col_invalid_desc_renderer(
+        col = "description",
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_description_length"
+        )
+      ) %>%
       add_hot_col_nchar_validator(
         col = "id",
         allowInvalid = FALSE,
-        nchar = whattemplatemaker::get_golem_config("maximum_id_length")
+        nchar = whattemplatemaker::get_golem_config(
+          "maximum_id_length"
+        )
       ) %>%
       add_hot_col_nchar_validator(
         col = "description",

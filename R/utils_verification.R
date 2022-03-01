@@ -51,3 +51,26 @@ valid_nchar <- function(x, length) {
   if (length(x) == 0) return(TRUE)
   isTRUE(max(nchar(x)) <= length)
 }
+
+#' Valid Excel Spreadsheet name characters
+#'
+#' Check that the input contains valid characters for an Excel spreadshhet name
+#'
+#' @inheritParams valid_nchar
+#'
+#' @inherit valid_nchar return
+#'
+#' @noRd
+valid_spreadsheet_characters <- function(x) {
+  # assert arguments are valid
+  assertthat::assert_that(
+    is.character(x)
+  )
+
+  # define invalid excel characters
+  chars <- c("\\", "/", "*", "?", ":", "[", "]")
+
+  # verify if invalid characters found
+  r <- vapply(chars, FUN.VALUE = logical(length(x)), grepl, x = x, fixed = TRUE)
+  !any(c(r), na.rm = TRUE)
+}
