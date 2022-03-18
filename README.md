@@ -3,7 +3,7 @@
 
 # whattemplatemaker: Interactive data template application for the What To Do application
 
-[![lifecycle](https://img.shields.io/badge/Lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html)
+[![lifecycle](https://img.shields.io/badge/Lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![R-CMD-check-Ubuntu](https://img.shields.io/github/workflow/status/NCC-CNC/whattemplatemaker/Ubuntu/master.svg?label=Ubuntu)](https://github.com/NCC-CNC/whattemplatemaker/actions)
 [![R-CMD-check-Windows](https://img.shields.io/github/workflow/status/NCC-CNC/whattemplatemaker/Windows/master.svg?label=Windows)](https://github.com/NCC-CNC/whattemplatemaker/actions)
 [![R-CMD-check-Mac-OSX](https://img.shields.io/github/workflow/status/NCC-CNC/whattemplatemaker/Mac%20OSX/master.svg?label=Mac%20OSX)](https://github.com/NCC-CNC/whattemplatemaker/actions)
