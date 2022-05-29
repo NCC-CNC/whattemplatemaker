@@ -93,9 +93,14 @@
   overflow: visible;
 }
 
-.handsontable .wtHolder{
+.handsontable .wtHolder {
   overflow-x: hidden;
   /* width: 100% !important; */
+}
+
+.tableContainer {
+  overflow: auto;
+  max-height: calc(100vh - 250px);
 }
 
 /* export buttons */

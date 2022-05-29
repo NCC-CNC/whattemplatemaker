@@ -146,6 +146,7 @@ app_ui <- function(request) {
                 ),
                 ## table
                 shiny::div(
+                  class = "tableContainer",
                   rhandsontable::rHandsontableOutput("site_data_widget")
                 ),
                 ## alert
@@ -187,6 +188,7 @@ app_ui <- function(request) {
                   )
                 ),
                 shiny::div(
+                  class = "tableContainer",
                   rhandsontable::rHandsontableOutput("feature_data_widget")
                 ),
                 shiny::br(),
@@ -248,6 +250,7 @@ app_ui <- function(request) {
                   )
                 ),
                 shiny::div(
+                  class = "tableContainer",
                   rhandsontable::rHandsontableOutput("action_data_widget")
                 ),
                 shiny::br(),
