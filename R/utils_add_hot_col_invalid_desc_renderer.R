@@ -7,7 +7,7 @@ NULL
 #'
 #' @inheritParams add_hot_col_invalid_id_renderer
 #'
-#' @inhert add_hot_col_invalid_id_renderer return
+#' @inherit add_hot_col_invalid_id_renderer return
 #'
 #' @examples
 #' # load package
