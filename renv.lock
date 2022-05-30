@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.1.2",
+    "Version": "4.1.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -120,6 +120,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "543776ae6848fde2f48ff3816d0628bc"
+    },
+    "boot": {
+      "Package": "boot",
+      "Version": "1.3-28",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "0baa960e3b49c6176a4f42addcbacc59"
     },
     "brew": {
       "Package": "brew",
@@ -391,6 +398,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "e32cfc0973caba11b65b1fa691b4d8c9"
+    },
+    "foreign": {
+      "Package": "foreign",
+      "Version": "0.8-81",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "74628ea7a3be5ee8a7b5bb0a8e84882e"
     },
     "fs": {
       "Package": "fs",
@@ -733,6 +747,13 @@
       "Repository": "CRAN",
       "Hash": "2d632e0d963a653a0329756ce701ecdd"
     },
+    "nnet": {
+      "Package": "nnet",
+      "Version": "7.3-16",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3a3dc184000bc9e6c145c4dbde4dd702"
+    },
     "openssl": {
       "Package": "openssl",
       "Version": "1.4.4",
@@ -742,10 +763,10 @@
     },
     "openxlsx": {
       "Package": "openxlsx",
-      "Version": "4.2.4",
+      "Version": "4.2.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "f1b1ca1254ccb485dccc9c0dc65a2c36"
+      "Hash": "fc5e0e85d3a1e4282f04f303627b7e72"
     },
     "parsedate": {
       "Package": "parsedate",
@@ -990,6 +1011,13 @@
       "Repository": "CRAN",
       "Hash": "fcd94e00cc409b25d07ca50f7bf339f5"
     },
+    "rpart": {
+      "Package": "rpart",
+      "Version": "4.1-15",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "9787c1fcb680e655d062e7611cadf78e"
+    },
     "rprojroot": {
       "Package": "rprojroot",
       "Version": "2.0.2",
@@ -1130,6 +1158,13 @@
       "Repository": "CRAN",
       "Hash": "dfd843ee98246cf932823acf613b05dd"
     },
+    "spatial": {
+      "Package": "spatial",
+      "Version": "7.3-14",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "a7341b0231ca84a0323982d5ae5a4300"
+    },
     "spelling": {
       "Package": "spelling",
       "Version": "2.2",
@@ -1150,6 +1185,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "0759e6b6c0957edb1311028a49a35e76"
+    },
+    "survival": {
+      "Package": "survival",
+      "Version": "3.2-11",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "f4d706b25d640dbaeb56d9c9b6ce9a22"
     },
     "svglite": {
       "Package": "svglite",
@@ -1300,8 +1342,8 @@
       "RemoteRepo": "whatdataio",
       "RemoteUsername": "NCC-CNC",
       "RemoteRef": "HEAD",
-      "RemoteSha": "4a7393f63bb3b0923347afeda316a5da9a6005a3",
-      "Hash": "ad3ef92d0f8f3862f474744ff7134e49"
+      "RemoteSha": "7cf90450fa2ee1399d6d55da520f796bff112cd7",
+      "Hash": "62d0e65fdfe65f2d3c54eff4f327267d"
     },
     "whisker": {
       "Package": "whisker",
