@@ -103,6 +103,15 @@
   max-height: calc(100vh - 250px);
 }
 
+.mainPanel div[style=""] + div.tableContainerSmall {
+  overflow: auto;
+  max-height: calc(100vh - 690px);
+}
+
+.mainPanel div[style="display: none;"] + div.tableContainerSmall {
+  max-height: calc(100vh - 250px);
+}
+
 /* export buttons */
 .exportButtons {
   display: flex;

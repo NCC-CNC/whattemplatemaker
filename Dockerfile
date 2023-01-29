@@ -25,6 +25,7 @@ RUN add-apt-repository ppa:ubuntugis/ubuntugis-unstable && \
       libharfbuzz-dev \
       libfribidi-dev \
       libfontconfig1-dev \
+      libgit2-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ## install R packages
