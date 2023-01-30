@@ -112,6 +112,13 @@
   max-height: calc(100vh - 250px);
 }
 
+/* manually style site table */
+#site_data_widget {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 /* export buttons */
 .exportButtons {
   display: flex;
