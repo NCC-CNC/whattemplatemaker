@@ -104,7 +104,6 @@
 }
 
 .mainPanel div[style=""] + div.tableContainerSmall {
-  overflow: auto;
   max-height: calc(100vh - 690px);
 }
 
