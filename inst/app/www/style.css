@@ -115,7 +115,7 @@
 #site_data_widget {
   max-height: calc(100vh - 250px);
   overflow-y: auto !important;
-  overflow-x: hidden !important;
+/*   overflow-x: hidden !important; */
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
