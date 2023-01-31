@@ -115,8 +115,8 @@
 /* manually style site table */
 #site_data_widget {
   max-height: calc(100vh - 250px);
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
 }
 
 /* export buttons */
