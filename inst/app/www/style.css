@@ -103,27 +103,6 @@
   max-height: calc(100vh - 250px);
 }
 
-.mainPanel div[style=""] + div.tableContainerSmall {
-  max-height: calc(100vh - 690px);
-}
-
-.mainPanel div[style="display: none;"] + div.tableContainerSmall {
-  max-height: calc(100vh - 250px);
-}
-
-/* manually style site table */
-#site_data_widget {
-  max-height: calc(100vh - 250px);
-  overflow-y: auto !important;
-/*   overflow-x: hidden !important; */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-#site_data_widget::-webkit-scrollbar {
-  display: none;
-}
-
 /* export buttons */
 .exportButtons {
   display: flex;

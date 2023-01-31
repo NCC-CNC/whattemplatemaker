@@ -146,7 +146,7 @@ app_ui <- function(request) {
                 ),
                 ## table
                 shiny::div(
-                  class = "tableContainerSmall",
+                  class = "tableContainer",
                   rhandsontable::rHandsontableOutput("site_data_widget")
                 ),
                 ## alert
