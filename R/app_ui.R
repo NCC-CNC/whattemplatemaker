@@ -147,7 +147,7 @@ app_ui <- function(request) {
                 ## table
                 shiny::div(
                   class = "tableContainerSmall",
-                  rhandsontable::rHandsontableOutput("site_data_widget", width = "105%")
+                  rhandsontable::rHandsontableOutput("site_data_widget")
                 ),
                 ## alert
                 shiny::br(),
