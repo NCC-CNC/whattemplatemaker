@@ -21,8 +21,7 @@ server_observe_data <- quote({
         values[["site_data"]][, c("id", "description"), drop = FALSE],
         useTypes = TRUE,
         width = whattemplatemaker::get_golem_config("table_width"),
-        stretchH = "all",
-        overflow = "hidden"
+        stretchH = "all"
       ) %>%
       add_hot_col_invalid_id_renderer(
         col = "id",
